@@ -1,0 +1,1914 @@
+<html lang="zh-CN"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>返现易快照 · 2026年7月8日</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&amp;family=Noto+Sans+SC:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{--red:#C8202A;--rd:#9e1520;--rl:#fdf1f2;--rm:#f5d0d2;--green:#2d7d46;--gl:#e8f5ee;--amber:#a05c00;--al:#fff8e6;--blue:#2563eb;--bl:#eff6ff;--purple:#9333ea;--pl:#fdf4ff;--orange:#ea580c;--ol:#fff7ed;--bg:#f7f6f4;--br:#e8e5e0;--br2:#d4d0ca;--tx:#1a1a1a;--t2:#666;--t3:#aaa;--sw:212px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Noto Sans SC",sans-serif;background:var(--bg);color:var(--tx);display:flex;min-height:100vh;font-size:14px}
+.sb{width:var(--sw);background:var(--red);display:flex;flex-direction:column;position:fixed;top:0;left:0;height:100vh;z-index:100;overflow-y:auto}
+.sb-logo{padding:20px 18px 15px;border-bottom:1px solid rgba(255,255,255,.13)}
+.sb-brand{font-size:15px;font-weight:600;color:#fff;letter-spacing:.03em}
+.sb-tag{font-size:11px;color:rgba(255,255,255,.42);margin-top:2px}
+.sb-nav{flex:1;padding:6px 0}
+.ngl{font-size:10.5px;color:rgba(255,255,255,.5);letter-spacing:.08em;padding:13px 16px 4px;text-transform:none;font-weight:500}
+.ni{display:flex;align-items:center;gap:9px;padding:7px 16px;cursor:pointer;color:rgba(255,255,255,.66);font-size:12.5px;transition:all .12s;border-left:3px solid transparent;user-select:none;overflow:hidden}
+.ni:hover{background:rgba(255,255,255,.1);color:#fff}
+.ni.active{background:rgba(255,255,255,.15);color:#fff;border-left-color:#fff;font-weight:500}
+.ni svg{width:14px;height:14px;opacity:.72;flex-shrink:0}.ni.active svg{opacity:1}
+.ni .dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.sb-foot{padding:11px 16px;border-top:1px solid rgba(255,255,255,.11);margin-top:auto}
+.sb-ver{font-size:11px;color:rgba(255,255,255,.26)}
+.nav-add{width:100%;padding:5px 8px;border:1px dashed rgba(255,255,255,.28);border-radius:5px;color:rgba(255,255,255,.48);font-size:11px;cursor:pointer;background:none;font-family:inherit;transition:all .15s;margin-top:4px}
+.nav-add:hover{border-color:rgba(255,255,255,.55);color:rgba(255,255,255,.75)}
+.main{margin-left:var(--sw);flex:1;display:flex;flex-direction:column;min-height:100vh}
+.topbar{background:#fff;border-bottom:1px solid var(--br);padding:0 22px;height:51px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50;flex-shrink:0}
+.tb-title{font-size:14px;font-weight:600}.tb-sub{font-size:11px;color:var(--t3);margin-top:1px}
+.tb-right{display:flex;gap:7px;align-items:center}
+.ct{padding:20px 24px;flex:1}
+.page{display:none}.page.active{display:block;animation:fi .2s ease}
+@keyframes fi{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+.btn{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:6px;font-size:12px;font-weight:500;cursor:pointer;border:none;font-family:inherit;transition:.15s;white-space:nowrap}
+.btn-p{background:var(--red);color:#fff}.btn-p:hover{background:var(--rd)}
+.btn-g{background:transparent;border:1px solid var(--br2);color:var(--t2)}.btn-g:hover{background:var(--bg)}
+.btn-gr{background:var(--gl);border:1px solid #b0d4be;color:var(--green)}.btn-gr:hover{background:#d8eee2}
+.btn-rl{background:var(--rl);border:1px solid var(--rm);color:var(--red)}
+.btn-sm{padding:4px 9px;font-size:11px}.btn-xs{padding:2px 7px;font-size:10px;border-radius:4px}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin-bottom:18px}
+.mc{background:#fff;border:1px solid var(--br);border-radius:9px;padding:13px 15px;border-left:3px solid var(--red)}
+.mc-l{font-size:11px;color:var(--t3);margin-bottom:5px}.mc-v{font-size:21px;font-weight:600}.mc-s{font-size:11px;color:var(--t3);margin-top:2px}
+.c-red{color:var(--red)}.c-green{color:var(--green)}.c-amber{color:var(--amber)}
+.card{background:#fff;border:1px solid var(--br);border-radius:9px;padding:14px 16px;margin-bottom:13px}
+.card-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:10px}
+.card-title{font-size:13px;font-weight:600}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:13px}
+.cw{position:relative;width:100%}
+.legend{display:flex;flex-wrap:wrap;gap:10px;font-size:11px;color:var(--t2);margin-bottom:8px}
+.legend span{display:flex;align-items:center;gap:4px}
+.ldot{width:8px;height:8px;border-radius:2px;flex-shrink:0}
+.pill{font-size:10px;padding:1px 6px;background:var(--bg);border:1px solid var(--br2);border-radius:8px;color:var(--t3)}
+.srow{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:8px;margin-bottom:13px}
+.sc{background:#fff;border:1px solid var(--br);border-radius:7px;padding:9px 12px}
+.sc-l{font-size:10px;color:var(--t3);margin-bottom:3px}.sc-v{font-size:1.2rem;font-weight:600}.sc-s{font-size:10px;color:var(--t3);margin-top:2px}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th{text-align:left;padding:7px 10px;font-size:11px;font-weight:500;color:var(--t3);border-bottom:1px solid var(--br);background:#faf9f8;white-space:nowrap}
+td{padding:7px 10px;border-bottom:1px solid var(--br);vertical-align:middle}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:#fdf9f9}
+.tbl{background:#fff;border:1px solid var(--br);border-radius:8px;overflow:hidden}
+.badge{display:inline-flex;align-items:center;padding:2px 7px;border-radius:20px;font-size:10px;font-weight:500;white-space:nowrap}
+.b-ok{background:var(--gl);color:var(--green)}.b-warn{background:var(--al);color:var(--amber)}.b-danger{background:var(--rl);color:var(--red)}
+.b-未开始{background:#f3f4f6;color:#6b7280}.b-已取数{background:var(--bl);color:var(--blue)}.b-已提交收款申请{background:var(--al);color:var(--amber)}.b-财务已开票{background:var(--pl);color:var(--purple)}.b-已上传发票{background:var(--ol);color:var(--orange)}.b-平台审核中{background:var(--bl);color:var(--blue)}.b-已到账{background:var(--gl);color:var(--green)}.b-已归档{background:#f3f4f6;color:#6b7280}.b-异常退回{background:var(--rl);color:var(--red)}.b-本月无需处理{background:#f3f4f6;color:#9ca3af}
+.frow{display:flex;gap:7px;margin-bottom:12px;align-items:center;flex-wrap:wrap}
+.frow select,.frow input[type=text]{font-size:12px;padding:5px 8px;border-radius:5px;border:1px solid var(--br2);background:#fff;color:var(--tx);font-family:inherit;outline:none}
+.fc{padding:3px 9px;border-radius:20px;font-size:11px;cursor:pointer;border:1px solid var(--br);background:#fff;color:var(--t2);transition:all .12s;font-family:inherit}
+.fc.active{background:var(--red);border-color:var(--red);color:#fff}
+.toolbar{display:flex;gap:7px;align-items:center;margin-bottom:11px;flex-wrap:wrap}
+.pg-hd{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px;gap:12px}
+.pg-hd-l .pg-title{font-family:"Noto Serif SC",serif;font-size:1.05rem;font-weight:600;margin-bottom:2px}
+.pg-hd-l .pg-sub{font-size:11px;color:var(--t3)}
+.pg-hd-r{display:flex;gap:7px;align-items:center;flex-shrink:0;margin-top:2px}
+.sec-hd{display:flex;align-items:center;justify-content:space-between;margin:14px 0 7px}
+.sec-hd h3{font-size:12px;font-weight:500}
+.tl{display:flex;flex-direction:column;gap:5px;margin-bottom:3px}
+.tcard{background:#fff;border:1px solid var(--br);border-radius:7px;padding:8px 12px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:box-shadow .15s}
+.tcard:hover{box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.tc-main{flex:1;min-width:0}.tc-name{font-size:12.5px;font-weight:500}.tc-meta{font-size:11px;color:var(--t3);margin-top:2px}
+.tc-amt{font-size:12px;font-weight:500;min-width:75px;text-align:right;flex-shrink:0}
+.es{text-align:center;padding:24px;color:var(--t3);font-size:12px}
+.qrow{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px;padding:10px 12px;background:#fff;border:1px solid var(--br);border-radius:8px}
+.qa-lbl{font-size:11px;color:var(--t3);margin-right:4px;align-self:center;white-space:nowrap}
+.risk-sec{background:var(--rl);border:1px solid var(--rm);border-radius:8px;padding:10px 12px;margin-bottom:13px}
+.risk-title{font-size:12px;font-weight:500;color:var(--red);margin-bottom:7px}
+.risk-list{display:flex;flex-direction:column;gap:5px}
+.ri{background:#fff;border:1px solid var(--rm);border-radius:5px;padding:6px 10px;display:flex;align-items:center;gap:8px;font-size:12px;cursor:pointer}
+.ri:hover{background:var(--rl)}
+.rt{padding:1px 6px;border-radius:10px;font-size:10px;font-weight:500;white-space:nowrap;flex-shrink:0}
+.rt-od{background:#fee2e2;color:var(--red)}.rt-mi{background:var(--al);color:var(--amber)}.rt-wa{background:var(--ol);color:var(--orange)}
+.pcg{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.pcard{background:#fff;border:1px solid var(--br);border-radius:9px;overflow:hidden;cursor:pointer;transition:box-shadow .18s,transform .18s}
+.pcard:hover{box-shadow:0 4px 14px rgba(0,0,0,.1);transform:translateY(-2px)}
+.pcard.dis{opacity:.5;pointer-events:none}
+.pcard-bar{height:3px}.pcard-body{padding:12px 14px 10px}
+.pcard-ico{font-size:1.35rem;line-height:1;margin-bottom:6px}
+.pcard-name{font-size:12.5px;font-weight:500;margin-bottom:3px}
+.pcard-desc{font-size:11px;color:var(--t3);line-height:1.55;margin-bottom:8px;min-height:30px}
+.pcard-prog{height:2px;background:var(--br);border-radius:2px;margin-bottom:7px;overflow:hidden}
+.pcard-bar2{height:100%;border-radius:2px;transition:width .4s ease}
+.pcard-ft{display:flex;align-items:center;justify-content:space-between;padding-top:6px;border-top:1px solid var(--br)}
+.dp{padding:1px 7px;border-radius:10px;font-size:10px;font-weight:500}
+.dp-d{background:var(--rl);color:var(--red)}.dp-w{background:var(--al);color:var(--amber)}.dp-ok{background:var(--gl);color:var(--green)}
+.edit-bar{display:flex;align-items:center;gap:7px;margin-bottom:13px;padding:6px 10px;background:#fff;border:1px solid var(--br);border-radius:7px;font-size:11.5px;color:var(--t3)}
+.em .edit-bar{border-color:#b0d4be;background:var(--gl);color:var(--green)}
+.plat-hd{display:flex;align-items:flex-start;gap:12px;margin-bottom:15px;padding-bottom:13px;border-bottom:1px solid var(--br)}
+.plat-ico{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.plat-txt h2{font-family:"Noto Serif SC",serif;font-size:1.12rem;font-weight:600;margin-bottom:3px}
+.plat-txt p{font-size:11px;color:var(--t3);line-height:1.6}
+.psc{background:linear-gradient(135deg,var(--rl) 0%,#fff 60%);border:1px solid var(--rm);border-radius:8px;padding:11px 15px;margin-bottom:14px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.psc-nr{background:var(--bg);border:1px dashed var(--br);border-radius:8px;padding:10px 15px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--t3)}
+.psc-item{display:flex;flex-direction:column;gap:2px}
+.psc-l{font-size:10px;color:var(--t3)}.psc-v{font-size:12.5px;font-weight:500}
+.ig{display:grid;grid-template-columns:repeat(auto-fill,minmax(143px,1fr));gap:8px;margin-bottom:14px}
+.ic{background:#fff;border:1px solid var(--br);border-radius:7px;padding:9px 11px;position:relative}
+.ic-l{font-size:10px;letter-spacing:.08em;color:var(--t3);margin-bottom:3px;text-transform:uppercase}
+.ic-v{font-size:12px;font-weight:500}
+.rm-ic{display:none;position:absolute;top:3px;right:3px;width:15px;height:15px;border-radius:3px;border:none;background:var(--rl);color:var(--red);font-size:.55rem;cursor:pointer;align-items:center;justify-content:center}
+.em .rm-ic{display:flex}
+.da-ic{border:1px dashed var(--br);border-radius:7px;padding:7px;display:none;align-items:center;justify-content:center;color:var(--t3);font-size:11px;cursor:pointer;background:none;font-family:inherit;width:100%}
+.em .da-ic{display:flex}
+.sl{font-size:10px;letter-spacing:.1em;color:var(--t3);text-transform:uppercase;margin-bottom:7px;margin-top:16px}
+.steps{display:flex;flex-direction:column}
+.step{display:flex;gap:11px;position:relative}
+.step:not(:last-child)::before{content:"";position:absolute;left:9px;top:22px;bottom:0;width:1px;background:var(--br)}
+.sn{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:600;flex-shrink:0;margin-top:1px;position:relative;z-index:1}
+.sbody{flex:1;padding-bottom:12px;position:relative}
+.stitle{font-size:12.5px;font-weight:500;margin-bottom:3px}
+.sdesc{font-size:11px;color:var(--t3);line-height:1.75;white-space:pre-wrap}
+.slink{display:inline-flex;align-items:center;gap:3px;margin-top:5px;padding:2px 7px;border-radius:4px;font-size:11px;text-decoration:none}
+.rm-s{display:none;position:absolute;top:0;right:0;padding:2px 6px;border-radius:3px;border:none;background:var(--rl);color:var(--red);font-size:.6rem;cursor:pointer;font-family:inherit}
+.em .rm-s{display:block}
+.add-s{display:none;width:100%;margin-top:3px;padding:6px;border:1px dashed var(--br);border-radius:5px;background:none;color:var(--t3);font-size:11px;cursor:pointer;font-family:inherit}
+.em .add-s{display:block}
+.ib{background:#fff;border:1px solid var(--br);border-radius:7px;overflow:hidden;margin-bottom:7px;position:relative}
+.ib-t{padding:5px 10px;font-size:11px;font-weight:500;background:#faf9f8;color:var(--t3);border-bottom:1px solid var(--br)}
+.itbl{width:100%;border-collapse:collapse;font-size:12px}
+.itbl tr{border-bottom:1px solid var(--br)}.itbl tr:last-child{border-bottom:none}
+.itbl td{padding:5px 10px;vertical-align:top;line-height:1.6}
+.itbl td:first-child{color:var(--t3);white-space:nowrap;width:98px}
+.rm-blk{display:none;position:absolute;top:3px;right:6px;padding:2px 5px;border-radius:3px;border:none;background:var(--rl);color:var(--red);font-size:.58rem;cursor:pointer;font-family:inherit}
+.em .rm-blk{display:block}
+.add-r{display:none;width:100%;padding:4px;border:none;border-top:1px dashed var(--br);background:rgba(0,0,0,.01);color:var(--t3);font-size:10px;cursor:pointer;font-family:inherit}
+.em .add-r{display:block}
+.rm-r{display:none;padding:1px 4px;border-radius:3px;border:none;background:var(--rl);color:var(--red);font-size:.57rem;cursor:pointer;font-family:inherit;margin-left:4px;vertical-align:middle}
+.em .rm-r{display:inline}
+.add-ib{display:none;width:100%;padding:5px;border:1px dashed var(--br);border-radius:6px;background:none;color:var(--t3);font-size:10px;cursor:pointer;font-family:inherit;margin-bottom:6px}
+.em .add-ib{display:block}
+.nb{background:#fffbf0;border:1px solid #f0e0b0;border-left:3px solid #e0a020;border-radius:0 6px 6px 0;padding:7px 10px;font-size:11px;color:#7a5c10;line-height:1.75;margin-bottom:7px;white-space:pre-wrap}
+.wb{background:var(--rl);border:1px solid var(--rm);border-radius:6px;padding:7px 10px;font-size:11px;color:#b01010;line-height:1.6;margin-bottom:7px;white-space:pre-wrap}
+.ag{display:grid;grid-template-columns:repeat(auto-fill,minmax(188px,1fr));gap:8px;margin-bottom:12px}
+.acard{background:#fff;border:1px solid var(--br);border-radius:7px;padding:9px 11px}
+.at{font-size:10px;color:var(--t3);letter-spacing:.08em;margin-bottom:6px;text-transform:uppercase}
+.ar{display:flex;justify-content:space-between;font-size:12px;padding:2px 0;gap:8px;align-items:center}
+.ar .lbl{color:var(--t2);flex-shrink:0}
+.ar .val{color:var(--tx);font-weight:500;display:flex;align-items:center;gap:4px;justify-content:flex-end}
+.cb{padding:1px 5px;border-radius:3px;border:1px solid var(--br);background:#fff;color:var(--t3);font-size:.57rem;cursor:pointer;font-family:inherit;transition:all .12s;white-space:nowrap;flex-shrink:0}
+.cb:hover{border-color:var(--rm);color:var(--red);background:var(--rl)}
+.pwb{padding:1px 4px;border-radius:3px;border:1px solid var(--br);background:#fff;color:var(--t3);font-size:.57rem;cursor:pointer;flex-shrink:0}
+.lg{display:grid;grid-template-columns:repeat(auto-fill,minmax(252px,1fr));gap:8px}
+.lcard{background:#fff;border:1px solid var(--br);border-radius:8px;overflow:hidden}
+.lhd{padding:7px 11px;background:#faf9f8;border-bottom:1px solid var(--br);display:flex;align-items:center;justify-content:space-between;gap:7px}
+.ln{font-size:12px;font-weight:500}.lp{font-size:10px;color:var(--t3)}
+.lr{display:flex;justify-content:space-between;padding:5px 11px;border-bottom:1px solid var(--br);font-size:11px;gap:8px;align-items:center}
+.lr:last-child{border-bottom:none}
+.lr .k{color:var(--t3);flex-shrink:0;width:76px}
+.lr .v{color:var(--tx);display:flex;align-items:center;gap:4px;justify-content:flex-end;word-break:break-all;text-align:right}
+.rmg{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px}
+.rmc{background:#fff;border:1px solid var(--br);border-radius:8px;overflow:hidden}
+.rmc-hd{display:flex;align-items:center;gap:7px;padding:8px 11px;border-bottom:1px solid var(--br);background:#faf9f8}
+.rmc-n{font-size:12px;font-weight:500;flex:1}
+.rmc-en{font-size:10px;padding:1px 6px;border-radius:8px}
+.en-on{background:var(--gl);color:var(--green)}.en-off{background:#f3f4f6;color:#9ca3af}
+.rmc-body{padding:5px 0}
+.rr{display:flex;justify-content:space-between;padding:4px 11px;font-size:11px}
+.rr .k{color:var(--t3)}
+.rmc-eb{padding:4px 10px;margin:5px 11px 7px;border:1px solid var(--br);border-radius:5px;background:#fff;color:var(--t3);font-size:11px;cursor:pointer;font-family:inherit;display:block;width:calc(100% - 22px)}
+.rmc-eb:hover{border-color:#aaa;color:var(--tx)}
+.sum-box{background:#fff;border:1px solid var(--br);border-radius:8px;padding:15px 18px}
+.sum-title{font-family:"Noto Serif SC",serif;font-size:.9rem;font-weight:600;margin-bottom:11px;padding-bottom:9px;border-bottom:1px solid var(--br)}
+.sum-stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:8px;margin-bottom:11px}
+.ss{text-align:center;padding:8px;background:var(--bg);border-radius:6px}
+.ss-v{font-size:1.1rem;font-weight:600;color:var(--red)}.ss-l{font-size:10px;color:var(--t3);margin-top:2px}
+.sg{margin-bottom:11px}.sg-t{font-size:12px;font-weight:500;margin-bottom:5px}
+.loglist{display:flex;flex-direction:column;gap:5px}
+.logitem{display:flex;gap:9px;padding:6px 10px;background:#fff;border:1px solid var(--br);border-radius:5px;font-size:12px}
+.log-t{color:var(--t3);white-space:nowrap;flex-shrink:0;font-size:11px;font-variant-numeric:tabular-nums}
+.log-a{color:var(--tx);flex:1}
+.log-c{padding:1px 6px;border-radius:8px;font-size:10px;font-weight:500;flex-shrink:0}
+.lc-e{background:var(--bl);color:var(--blue)}.lc-l{background:var(--gl);color:var(--green)}.lc-s{background:#f3f4f6;color:#6b7280}.lc-p{background:var(--pl);color:var(--purple)}
+.cfg-sec{background:#fff;border:1px solid var(--br);border-radius:8px;padding:12px 14px;margin-bottom:10px}
+.cfg-t{font-size:12.5px;font-weight:500;margin-bottom:9px}
+.cfg-r{display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--br);font-size:12px;gap:12px}
+.cfg-r:last-child{border-bottom:none}
+.cfg-d{font-size:11px;color:var(--t3);margin-top:2px}
+[contenteditable]{outline:none;border-radius:3px;transition:background .12s,box-shadow .12s;min-width:8px}
+.em [contenteditable]:hover{background:rgba(0,0,0,.04)}
+.em [contenteditable]:focus{background:rgba(0,0,0,.06);box-shadow:0 0 0 1px #b0d4be}
+.mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.44);z-index:200;align-items:center;justify-content:center}
+.mo.open{display:flex}
+.md{background:#fff;border-radius:10px;padding:20px 22px;width:500px;max-width:95vw;max-height:92vh;overflow-y:auto;box-shadow:0 8px 32px rgba(0,0,0,.16);position:relative}
+.md.wide{width:640px}.md.narrow{width:390px}
+.md h2{font-family:"Noto Serif SC",serif;font-size:.94rem;font-weight:600;margin-bottom:5px}
+.md-sub{font-size:12px;color:var(--t3);margin-bottom:12px}
+.md-x{position:absolute;top:13px;right:14px;background:none;border:none;font-size:18px;cursor:pointer;color:var(--t3);line-height:1}
+.md-x:hover{color:var(--tx)}
+.md-ft{display:flex;gap:7px;justify-content:flex-end;margin-top:14px;padding-top:12px;border-top:1px solid var(--br)}
+.fg{margin-bottom:11px}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.fg3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px}
+.fl{font-size:11px;color:var(--t3);margin-bottom:4px;display:block}
+.fi,.fs,.fta{width:100%;padding:6px 9px;background:#fafafa;border:1px solid var(--br);border-radius:5px;color:var(--tx);font-family:inherit;font-size:12.5px;outline:none;transition:border-color .15s}
+.fi:focus,.fs:focus,.fta:focus{border-color:#aaa;background:#fff}
+.fta{resize:vertical;min-height:48px}
+.uz{border:2px dashed var(--br2);border-radius:7px;padding:22px;text-align:center;cursor:pointer;transition:.2s;font-size:12px;color:var(--t3)}
+.uz:hover,.uz.drag{border-color:var(--red);background:var(--rl)}
+.uz-ico{font-size:22px;margin-bottom:5px}
+.up-prev{font-size:12px;color:var(--green);margin-top:7px;display:none}
+.up-prev.show{display:block}
+.cr{display:flex;gap:6px;flex-wrap:wrap;margin-top:3px}
+.csw{width:20px;height:20px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:all .15s}
+.csw:hover{transform:scale(1.15)}.csw.sel{border-color:#333}
+.srch-wrap{flex:1;max-width:340px;position:relative}
+.srch-in{width:100%;padding:5px 11px 5px 27px;border:1px solid var(--br);border-radius:6px;background:var(--bg);font-family:inherit;font-size:12px;color:var(--tx);outline:none;transition:all .15s}
+.srch-in:focus{border-color:#aaa;background:#fff}
+.srch-ico{position:absolute;left:8px;top:50%;transform:translateY(-50%);color:var(--t3);font-size:.72rem;pointer-events:none}
+.sr-box{position:absolute;top:calc(100%+4px);left:0;right:0;background:#fff;border:1px solid var(--br);border-radius:7px;box-shadow:0 4px 16px rgba(0,0,0,.1);z-index:200;max-height:260px;overflow-y:auto;display:none}
+.sr-box.open{display:block}
+.sri{padding:8px 12px;cursor:pointer;border-bottom:1px solid var(--br);font-size:12px;transition:background .1s}
+.sri:last-child{border-bottom:none}.sri:hover{background:var(--rl)}
+.sri-tag{font-size:10px;color:var(--t3);margin-top:1px}
+.toast{position:fixed;bottom:16px;right:16px;padding:7px 13px;background:#fff;border:1px solid var(--br);border-radius:7px;font-size:12px;z-index:300;opacity:0;transform:translateY(8px);transition:all .25s;pointer-events:none;box-shadow:0 4px 14px rgba(0,0,0,.1)}
+.toast.show{opacity:1;transform:translateY(0)}
+
+/* ── Invoice task board ── */
+.inv-board{background:#fff;border:1px solid var(--br);border-radius:9px;overflow:hidden}
+.inv-board-hd{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#faf9f8;border-bottom:1px solid var(--br)}
+.inv-board-title{font-size:12.5px;font-weight:600}
+.inv-board-meta{font-size:11px;color:var(--t3)}
+.inv-row{display:flex;align-items:center;padding:10px 14px;border-bottom:1px solid var(--br);gap:12px;cursor:pointer;transition:background .12s}
+.inv-row:last-child{border-bottom:none}
+.inv-row:hover{background:#fdf9f9}
+.inv-row.overdue{border-left:3px solid var(--red)}
+.inv-row.anomaly{border-left:3px solid var(--amber)}
+.inv-plat{font-size:13px;font-weight:500;width:100px;flex-shrink:0}
+.inv-status-wrap{flex-shrink:0}
+.inv-meta{flex:1;font-size:11px;color:var(--t3);min-width:0}
+.inv-meta-row{display:flex;gap:10px;flex-wrap:wrap}
+.inv-amt{font-size:12.5px;font-weight:500;text-align:right;min-width:80px;flex-shrink:0}
+.inv-action{font-size:11px;color:var(--t3);flex-shrink:0;white-space:nowrap}
+.inv-step{font-size:11px;color:var(--blue);flex-shrink:0;white-space:nowrap}
+.risk-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:500;cursor:pointer;border:none;font-family:inherit}
+.risk-badge-red{background:var(--rl);color:var(--red)}
+.risk-badge-amber{background:var(--al);color:var(--amber)}
+.risk-collapse{margin-bottom:12px}
+.risk-collapse-hd{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.risk-collapse-body{display:none}
+.risk-collapse-body.open{display:block}
+
+/* ── Snapshot card ── */
+.snap-wrap{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:300;align-items:center;justify-content:center;padding:20px}
+.snap-wrap.open{display:flex}
+.snap-outer{display:flex;flex-direction:column;align-items:center;gap:12px;max-height:92vh;overflow-y:auto}
+.snap-actions{display:flex;gap:9px}
+.snap-card{background:#fff;border-radius:16px;width:520px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.3);font-family:'Noto Sans SC',sans-serif}
+.snap-header{background:linear-gradient(135deg,#C8202A 0%,#9e1520 100%);padding:22px 24px 18px;color:#fff}
+.snap-logo{font-size:18px;font-weight:700;letter-spacing:.04em;margin-bottom:3px}
+.snap-date{font-size:12px;opacity:.75}
+.snap-section{padding:16px 20px;border-bottom:1px solid #f0f0f0}
+.snap-section:last-child{border-bottom:none}
+.snap-sec-title{font-size:10.5px;font-weight:600;letter-spacing:.1em;color:#999;text-transform:uppercase;margin-bottom:11px}
+.snap-kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:4px}
+.snap-kpi{background:#faf9f8;border-radius:9px;padding:10px 12px;text-align:center}
+.snap-kpi-val{font-size:20px;font-weight:700;color:#C8202A}
+.snap-kpi-lbl{font-size:10px;color:#999;margin-top:3px}
+.snap-plat-row{display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid #f5f5f5;font-size:12px}
+.snap-plat-row:last-child{border-bottom:none}
+.snap-plat-name{font-weight:500;color:#1a1a1a}
+.snap-plat-status{padding:2px 8px;border-radius:10px;font-size:10px;font-weight:500}
+.snap-plat-amt{font-size:12px;font-weight:600;color:#1a1a1a}
+.snap-st-done{background:#e8f5ee;color:#2d7d46}
+.snap-st-doing{background:#eff6ff;color:#2563eb}
+.snap-st-wait{background:#f3f4f6;color:#6b7280}
+.snap-st-anom{background:#fdf1f2;color:#C8202A}
+.snap-footer{background:#faf9f8;padding:12px 20px;font-size:10.5px;color:#aaa;text-align:center}
+.snap-settle-row{display:flex;justify-content:space-between;font-size:12px;padding:4px 0;border-bottom:1px solid #f5f5f5}
+.snap-settle-row:last-child{border-bottom:none}
+
+/* ── Config cards ── */
+.cfg-card{background:#fff;border:1px solid var(--br);border-radius:12px;padding:22px 20px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;transition:box-shadow .15s}
+.cfg-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.cfg-card-ico{font-size:2rem;line-height:1}
+.cfg-card-title{font-size:14px;font-weight:600;margin-top:2px}
+.cfg-card-desc{font-size:12px;color:var(--t3);line-height:1.7;flex:1}
+.cfg-card .btn{margin-top:4px;align-self:flex-start}
+</style>
+</head>
+<body><div style="position:fixed;top:0;left:0;right:0;z-index:9999;background:#a05c00;color:#fff;text-align:center;padding:6px 12px;font-size:12px;font-family:sans-serif">📸 数据快照 · 2026年7月8日 · 只读模式，数据不会被修改</div><div style="height:32px"></div>
+<aside class="sb">
+  <div class="sb-logo"><div class="sb-brand">返现易</div><div class="sb-tag">运营管理中台</div></div>
+  <nav class="sb-nav">
+    <!-- 一、经营总览中心 -->
+    <div class="ngl">经营总览中心</div>
+    <div class="ni" id="N-overview" onclick="go('overview',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect></svg>总览看板</div>
+    <div class="ni" id="N-summary" onclick="go('summary',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>月度汇总</div>
+    <!-- 二、商城管理中心 -->
+    <div class="ngl">商城管理中心</div>
+    <div class="ni" id="N-malls" onclick="go('malls',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 01-8 0"></path></svg>商城列表</div>
+    <div class="ni" onclick="openAddMall()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>引入新商城</div>
+    <!-- 三、开票处理中心 -->
+    <div class="ngl">开票处理中心</div>
+    <div class="ni" id="N-invoice" onclick="go('invoice',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg>开票看板</div>
+    <div class="ni" id="N-ledger" onclick="go('ledger',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>月度台账</div>
+    <!-- 四、结算管理中心 -->
+    <div class="ngl">结算管理中心</div>
+    <div class="ni" id="N-settlement" onclick="go('settlement',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>结算数据</div>
+    <div class="ni" onclick="openMo('mo-upload')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>上传结算数据</div>
+    <!-- 五、平台资料中心 -->
+    <div class="ngl">平台资料中心</div>
+    <div class="ni" id="N-platforms" onclick="go('platforms',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"></path></svg>平台流程库</div>
+    <div class="ni" id="N-library" onclick="go('library',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"></path></svg>开票信息库</div>
+    <div class="ni" id="N-reminders" onclick="go('reminders',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 01-3.46 0"></path></svg>提醒规则</div>
+    <!-- 六、系统配置中心 -->
+    <div class="ngl">系统配置中心</div>
+    <div class="ni" id="N-log" onclick="go('log',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>操作日志</div>
+    <div class="ni active" id="N-config" onclick="go('config',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path><path d="M12 2v9m0 0l-3-3m3 3l3-3"></path><rect x="3" y="14" width="18" height="7" rx="1"></rect></svg>数据管理</div>
+  </nav>
+  <div class="sb-foot"><div class="sb-ver">v2.0 · 2026年5月</div></div>
+</aside>
+
+<div class="main">
+  <div class="topbar">
+    <div><div class="tb-title" id="tb-title">数据管理中心</div><div class="tb-sub" id="tb-sub"></div></div>
+    <div class="tb-right">
+      <div class="srch-wrap"><span class="srch-ico">🔍</span><input class="srch-in" id="srchIn" placeholder="搜索平台、流程、税号…" oninput="doSearch(this.value)" onblur="hideSearch()" onfocus="if(this.value)doSearch(this.value)"><div class="sr-box" id="srBox"></div></div>
+      <button class="btn btn-g btn-xs" id="dpb" onclick="deletePlat()" style="display:none">🗑 删除</button>
+      <button class="btn btn-g btn-xs" id="etb" onclick="toggleEdit()" style="display:none">✏️ 编辑</button>
+      <button class="btn btn-gr btn-xs" id="svb" onclick="saveData()" style="display:none">💾 保存</button>
+    </div>
+  </div>
+  <div class="ct">
+
+  <div class="page" id="page-overview">
+    <div class="metrics">
+      <div class="mc"><div class="mc-l">2025年总结算额</div><div class="mc-v" id="total2025">¥991,871</div><div class="mc-s">全年累计</div></div>
+      <div class="mc"><div class="mc-l">2026年结算额（已入账）</div><div class="mc-v" id="total2026">¥339,963</div><div class="mc-s" id="total2026-sub">截至六月累计</div></div>
+      <div class="mc"><div class="mc-l">商城总数</div><div class="mc-v" id="mc-total">36</div><div class="mc-s">已接入平台</div></div>
+      <div class="mc"><div class="mc-l">高风险商城</div><div class="mc-v c-red" id="mc-risk">22</div><div class="mc-s">需关注或清理</div></div>
+    </div>
+    <div class="g2">
+      <div class="card" style="margin-bottom:0"><div class="card-hd"><span class="card-title">2025月度结算趋势</span><span class="pill">堆叠</span></div><div class="legend"><span><span class="ldot" style="background:#C8202A"></span>淘宝</span><span><span class="ldot" style="background:#2d7d46"></span>京东</span><span><span class="ldot" style="background:#a05c00"></span>拼多多</span><span><span class="ldot" style="background:#b4b2a9"></span>其他</span></div><div class="cw" style="height:190px"><canvas id="trendChart" style="box-sizing: border-box; display: block; height: 190px; width: 459px;" width="688" height="285"></canvas></div></div>
+      <div class="card" style="margin-bottom:0"><div class="card-hd"><span class="card-title">2025平台占比</span></div><div class="cw" style="height:208px"><canvas id="pieChart" style="box-sizing: border-box; display: block; height: 208px; width: 459px;" width="688" height="312"></canvas></div></div>
+    </div>
+    <div class="card"><div class="card-hd"><span class="card-title">2025 vs 2026 一季度对比</span><div class="legend" style="margin:0"><span><span class="ldot" style="background:#C8202A"></span>2025</span><span><span class="ldot" style="background:#2d7d46"></span>2026</span></div></div><div class="cw" style="height:155px"><canvas id="compareChart" style="box-sizing: border-box; display: block; height: 155px; width: 963px;" width="1444" height="232"></canvas></div></div>
+    <div class="card"><div class="card-hd"><span class="card-title">本月开票进度</span><button class="btn btn-g btn-xs" onclick="go('invoice',document.getElementById('N-invoice'))">查看详情 →</button></div><div id="inv-snap"><div style="color:var(--t3);font-size:12px;padding:8px 0">本月暂无开票台账记录 · <button onclick="goInvoice()" style="background:none;border:none;color:var(--red);cursor:pointer;font-size:12px;font-family:inherit;padding:0">前往创建 →</button></div></div></div>
+  </div>
+
+  <div class="page" id="page-settlement">
+    <div class="frow">
+      <select id="yearSel" onchange="renderSettle()"><option value="2025">2025年</option><option value="2026">2026年</option></select>
+      <select id="platSel" onchange="renderSettle()"><option value="all">所有平台</option></select>
+      <button class="btn btn-g btn-sm" style="margin-left:auto" onclick="openMo('mo-upload')">↑ 上传结算数据</button>
+    </div>
+    <div class="metrics" id="settle-metrics"></div>
+    <div class="card"><div class="card-hd"><span class="card-title">平台结算明细</span></div><div style="overflow-x:auto" id="settle-table"></div></div>
+    <div class="card"><div class="card-hd"><span class="card-title">平台结算对比</span></div><div id="settle-chart-wrap" style="position:relative"><canvas id="settlebar"></canvas></div></div>
+  </div>
+
+  <div class="page" id="page-malls">
+    <div class="metrics" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+      <div class="mc" style="border-left-color:var(--green)"><div class="mc-l">正常商城</div><div class="mc-v c-green" id="mc-ok">14</div><div class="mc-s">低风险</div></div>
+      <div class="mc" style="border-left-color:var(--amber)"><div class="mc-l">中风险商城</div><div class="mc-v c-amber" id="mc-warn">2</div><div class="mc-s">需关注</div></div>
+      <div class="mc"><div class="mc-l">高风险商城</div><div class="mc-v c-red" id="mc-danger">22</div><div class="mc-s">需清理</div></div>
+    </div>
+    <div class="frow">
+      <input type="text" id="mallSearch" placeholder="搜索商城名称…" oninput="renderMalls()" style="width:180px">
+      <select id="mallStatus" onchange="renderMalls()"><option value="all">全部状态</option><option value="正常">正常</option><option value="异常">异常</option></select>
+      <select id="mallRisk" onchange="renderMalls()"><option value="all">全部风险</option><option value="正常">低风险</option><option value="中风险">中风险</option><option value="高风险">高风险</option></select>
+      <button class="btn btn-p btn-sm" style="margin-left:auto" onclick="openAddMall()">＋ 引入新商城</button>
+    </div>
+    <div class="tbl"><table><thead><tr><th>商城名称</th><th>合作情况</th><th>风险等级</th><th>说明</th><th>行动建议</th><th>操作</th></tr></thead><tbody id="mallBody"><tr><td style="font-weight:500">淘宝</td><td><span class="badge b-ok">正常</span></td><td><span class="badge b-ok">正常</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">热门下单平台</td><td style="font-size:12px">保持现状</td><td><button class="btn btn-rl btn-xs" onclick="delMall(0)">移除</button></td></tr><tr><td style="font-weight:500">京东</td><td><span class="badge b-ok">正常</span></td><td><span class="badge b-ok">正常</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">热门下单平台</td><td style="font-size:12px">保持现状</td><td><button class="btn btn-rl btn-xs" onclick="delMall(1)">移除</button></td></tr><tr><td style="font-weight:500">拼多多</td><td><span class="badge b-ok">正常</span></td><td><span class="badge b-ok">正常</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">热门下单平台</td><td style="font-size:12px">保持现状</td><td><button class="btn btn-rl btn-xs" onclick="delMall(2)">移除</button></td></tr><tr><td style="font-weight:500">唯品会</td><td><span class="badge b-ok">正常</span></td><td><span class="badge b-ok">正常</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">个人号推广</td><td style="font-size:12px">保持现状</td><td><button class="btn btn-rl btn-xs" onclick="delMall(3)">移除</button></td></tr><tr><td style="font-weight:500">洲际酒店</td><td><span class="badge b-ok">正常</span></td><td><span class="badge b-ok">正常</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">用户返现2%</td><td style="font-size:12px">保持现状</td><td><button class="btn btn-rl btn-xs" onclick="delMall(4)">移除</button></td></tr><tr><td style="font-weight:500">美团外卖</td><td><span class="badge b-ok">正常</span></td><td><span class="badge b-warn">中风险</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">很多订单返现0.01</td><td style="font-size:12px">存在异常订单，需规范用户行为</td><td><button class="btn btn-rl btn-xs" onclick="delMall(5)">移除</button></td></tr><tr><td style="font-weight:500">饿了么</td><td><span class="badge b-ok">正常</span></td><td><span class="badge b-ok">正常</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">—</td><td style="font-size:12px">保持现状</td><td><button class="btn btn-rl btn-xs" onclick="delMall(6)">移除</button></td></tr><tr><td style="font-weight:500">飞猪</td><td><span class="badge b-ok">正常</span></td><td><span class="badge b-warn">中风险</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">很多订单返现0.01</td><td style="font-size:12px">存在异常订单，需规范用户行为</td><td><button class="btn btn-rl btn-xs" onclick="delMall(7)">移除</button></td></tr><tr><td style="font-weight:500">天猫超市</td><td><span class="badge b-danger">异常</span></td><td><span class="badge b-danger">高风险</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">无相关订单记录</td><td style="font-size:12px">长期无订单，建议清理</td><td><button class="btn btn-rl btn-xs" onclick="delMall(8)">移除</button></td></tr><tr><td style="font-weight:500">AGODA</td><td><span class="badge b-ok">正常</span></td><td><span class="badge b-ok">正常</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">用户返现2%，频率较低</td><td style="font-size:12px">保持现状</td><td><button class="btn btn-rl btn-xs" onclick="delMall(9)">移除</button></td></tr><tr><td style="font-weight:500">香港通信上台</td><td><span class="badge b-ok">正常</span></td><td><span class="badge b-ok">正常</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">—</td><td style="font-size:12px">保持现状</td><td><button class="btn btn-rl btn-xs" onclick="delMall(10)">移除</button></td></tr><tr><td style="font-weight:500">亚马逊中国</td><td><span class="badge b-danger">异常</span></td><td><span class="badge b-danger">高风险</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">最近订单：2023-12-31</td><td style="font-size:12px">订单停滞，需激活或下架</td><td><button class="btn btn-rl btn-xs" onclick="delMall(11)">移除</button></td></tr><tr><td style="font-weight:500">苹果中国</td><td><span class="badge b-danger">异常</span></td><td><span class="badge b-danger">高风险</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">无相关订单记录</td><td style="font-size:12px">长期无订单，建议清理</td><td><button class="btn btn-rl btn-xs" onclick="delMall(12)">移除</button></td></tr><tr><td style="font-weight:500">小米有品</td><td><span class="badge b-danger">异常</span></td><td><span class="badge b-danger">高风险</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">最近几笔返现为0</td><td style="font-size:12px">返现为0，需核实合作条款</td><td><button class="btn btn-rl btn-xs" onclick="delMall(13)">移除</button></td></tr><tr><td style="font-weight:500">网易严选</td><td><span class="badge b-danger">异常</span></td><td><span class="badge b-danger">高风险</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">最近订单：2024-12-26</td><td style="font-size:12px">订单停滞，需激活或下架</td><td><button class="btn btn-rl btn-xs" onclick="delMall(14)">移除</button></td></tr><tr><td style="font-weight:500">中免日上</td><td><span class="badge b-danger">异常</span></td><td><span class="badge b-danger">高风险</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">官方暂停推广</td><td style="font-size:12px">订单停滞，需激活或下架</td><td><button class="btn btn-rl btn-xs" onclick="delMall(15)">移除</button></td></tr><tr><td style="font-weight:500">苏宁</td><td><span class="badge b-ok">正常</span></td><td><span class="badge b-ok">正常</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">下单频率较低</td><td style="font-size:12px">保持现状</td><td><button class="btn btn-rl btn-xs" onclick="delMall(16)">移除</button></td></tr><tr><td style="font-weight:500">美团生鲜</td><td><span class="badge b-danger">异常</span></td><td><span class="badge b-danger">高风险</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">无相关订单记录</td><td style="font-size:12px">长期无订单，建议清理</td><td><button class="btn btn-rl btn-xs" onclick="delMall(17)">移除</button></td></tr><tr><td style="font-weight:500">肯德基</td><td><span class="badge b-danger">异常</span></td><td><span class="badge b-danger">高风险</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">最近订单：2022/11/3</td><td style="font-size:12px">订单停滞，需激活或下架</td><td><button class="btn btn-rl btn-xs" onclick="delMall(18)">移除</button></td></tr><tr><td style="font-weight:500">携程</td><td><span class="badge b-ok">正常</span></td><td><span class="badge b-ok">正常</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">—</td><td style="font-size:12px">保持现状</td><td><button class="btn btn-rl btn-xs" onclick="delMall(19)">移除</button></td></tr><tr><td style="font-weight:500">points.com</td><td><span class="badge b-ok">正常</span></td><td><span class="badge b-ok">正常</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">—</td><td style="font-size:12px">保持现状</td><td><button class="btn btn-rl btn-xs" onclick="delMall(20)">移除</button></td></tr><tr><td style="font-weight:500">美团酒店</td><td><span class="badge b-danger">异常</span></td><td><span class="badge b-danger">高风险</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">最近订单：2021/8/8</td><td style="font-size:12px">订单停滞，需激活或下架</td><td><button class="btn btn-rl btn-xs" onclick="delMall(21)">移除</button></td></tr><tr><td style="font-weight:500">国美商城</td><td><span class="badge b-danger">异常</span></td><td><span class="badge b-danger">高风险</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">最近订单：2021/12/3</td><td style="font-size:12px">订单停滞，需激活或下架</td><td><button class="btn btn-rl btn-xs" onclick="delMall(22)">移除</button></td></tr><tr><td style="font-weight:500">途牛旅游</td><td><span class="badge b-danger">异常</span></td><td><span class="badge b-danger">高风险</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">最近订单：2023-06-26</td><td style="font-size:12px">订单停滞，需激活或下架</td><td><button class="btn btn-rl btn-xs" onclick="delMall(23)">移除</button></td></tr><tr><td style="font-weight:500">同程旅游</td><td><span class="badge b-danger">异常</span></td><td><span class="badge b-danger">高风险</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">无相关订单记录</td><td style="font-size:12px">长期无订单，建议清理</td><td><button class="btn btn-rl btn-xs" onclick="delMall(24)">移除</button></td></tr><tr><td style="font-weight:500">滨客</td><td><span class="badge b-danger">异常</span></td><td><span class="badge b-danger">高风险</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">最近订单：2024/4/7</td><td style="font-size:12px">订单停滞，需激活或下架</td><td><button class="btn btn-rl btn-xs" onclick="delMall(25)">移除</button></td></tr><tr><td style="font-weight:500">滴滴打车</td><td><span class="badge b-ok">正常</span></td><td><span class="badge b-ok">正常</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">—</td><td style="font-size:12px">保持现状</td><td><button class="btn btn-rl btn-xs" onclick="delMall(26)">移除</button></td></tr><tr><td style="font-weight:500">一嗨租车</td><td><span class="badge b-danger">异常</span></td><td><span class="badge b-danger">高风险</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">最近订单：2021/4/12</td><td style="font-size:12px">订单停滞，需激活或下架</td><td><button class="btn btn-rl btn-xs" onclick="delMall(27)">移除</button></td></tr><tr><td style="font-weight:500">特步中国</td><td><span class="badge b-danger">异常</span></td><td><span class="badge b-danger">高风险</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">无相关订单记录</td><td style="font-size:12px">长期无订单，建议清理</td><td><button class="btn btn-rl btn-xs" onclick="delMall(28)">移除</button></td></tr><tr><td style="font-weight:500">迪卡侬中国</td><td><span class="badge b-danger">异常</span></td><td><span class="badge b-danger">高风险</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">无相关订单记录</td><td style="font-size:12px">长期无订单，建议清理</td><td><button class="btn btn-rl btn-xs" onclick="delMall(29)">移除</button></td></tr><tr><td style="font-weight:500">微软中国</td><td><span class="badge b-danger">异常</span></td><td><span class="badge b-danger">高风险</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">无相关订单记录</td><td style="font-size:12px">长期无订单，建议清理</td><td><button class="btn btn-rl btn-xs" onclick="delMall(30)">移除</button></td></tr><tr><td style="font-weight:500">联想商城</td><td><span class="badge b-danger">异常</span></td><td><span class="badge b-danger">高风险</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">最近订单：2025-06-12（补单）</td><td style="font-size:12px">订单停滞，需激活或下架</td><td><button class="btn btn-rl btn-xs" onclick="delMall(31)">移除</button></td></tr><tr><td style="font-weight:500">VIVO</td><td><span class="badge b-danger">异常</span></td><td><span class="badge b-danger">高风险</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">无相关订单记录</td><td style="font-size:12px">长期无订单，建议清理</td><td><button class="btn btn-rl btn-xs" onclick="delMall(32)">移除</button></td></tr><tr><td style="font-weight:500">国药网</td><td><span class="badge b-danger">异常</span></td><td><span class="badge b-danger">高风险</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">无相关订单记录</td><td style="font-size:12px">长期无订单，建议清理</td><td><button class="btn btn-rl btn-xs" onclick="delMall(33)">移除</button></td></tr><tr><td style="font-weight:500">叮当快药</td><td><span class="badge b-danger">异常</span></td><td><span class="badge b-danger">高风险</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">最近订单：2021/12/16</td><td style="font-size:12px">订单停滞，需激活或下架</td><td><button class="btn btn-rl btn-xs" onclick="delMall(34)">移除</button></td></tr><tr><td style="font-weight:500">考拉海购</td><td><span class="badge b-danger">异常</span></td><td><span class="badge b-danger">高风险</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">最近订单：2024/9/30</td><td style="font-size:12px">订单停滞，需激活或下架</td><td><button class="btn btn-rl btn-xs" onclick="delMall(35)">移除</button></td></tr></tbody></table></div>
+  </div>
+
+  <div class="page" id="page-invoice">
+    <div class="pg-hd">
+      <div class="pg-hd-l"><div class="pg-title">开票看板</div><div class="pg-sub" id="dashSub"></div></div>
+      <div class="pg-hd-r">
+        <button class="btn btn-p btn-sm" onclick="genTasks()">⚡ 生成本月任务</button>
+        <button class="btn btn-g btn-sm" onclick="openAddLedger()">＋ 新建记录</button>
+        <button class="btn btn-g btn-sm" onclick="go('ledger',document.getElementById('N-ledger'))">台账详情 →</button>
+      </div>
+    </div>
+    <!-- 统计行 -->
+    <div class="srow" id="invStats"></div>
+    <!-- 风险提醒（折叠式） -->
+    <div id="riskSec"></div>
+    <!-- 本月任务进度表（唯一列表，每条记录只出现一次） -->
+    <div id="invTaskBoard"></div>
+  </div>
+
+  <div class="page" id="page-ledger">
+    <div class="pg-hd">
+      <div class="pg-hd-l"><div class="pg-title">月度开票台账</div><div class="pg-sub">每月每平台开票进度记录</div></div>
+      <div class="pg-hd-r">
+        <button class="btn btn-g btn-sm" onclick="genTasks()">⚡ 生成本月任务</button>
+        <button class="btn btn-p btn-sm" onclick="openAddLedger()">＋ 新建记录</button>
+        <button class="btn btn-g btn-sm" onclick="exportLedger()">↓ 导出</button>
+      </div>
+    </div>
+    <div class="srow" id="ledgerStats"></div>
+    <div class="toolbar">
+      <select class="fi" style="width:118px" id="ledgerMon" onchange="renderLedger()"></select>
+      <div id="filterBar" style="display:flex;gap:5px;flex-wrap:wrap"></div>
+    </div>
+    <div class="tbl"><table><thead><tr><th>平台</th><th>结算月份</th><th>平台金额</th><th>实际金额</th><th>差额</th><th>开票主体</th><th>发票号码</th><th>状态</th><th>备注</th><th>操作</th></tr></thead><tbody id="ledgerBody"></tbody></table></div>
+  </div>
+
+  <div class="page" id="page-summary">
+    <div class="pg-hd">
+      <div class="pg-hd-l"><div class="pg-title">月度汇总报表</div><div class="pg-sub">可直接复制对上汇报</div></div>
+      <div class="pg-hd-r">
+        <select class="fi" style="width:118px" id="sumMon" onchange="renderSummary()"></select>
+        <button class="btn btn-p btn-sm" onclick="copySummary()">📋 复制报告</button>
+        <button class="btn btn-g btn-sm" onclick="exportSummary()">↓ 导出</button>
+      </div>
+    </div>
+    <div id="sumContent"></div>
+  </div>
+
+  <div class="page" id="page-platforms">
+    <div class="pg-hd">
+      <div class="pg-hd-l"><div class="pg-title">平台流程库</div><div class="pg-sub">点击卡片查看详细操作流程</div></div>
+      <div class="pg-hd-r">
+        <select class="fi" style="width:118px" id="platLibMon" onchange="renderPlatList()"></select>
+        <button class="btn btn-p btn-sm" onclick="openAddPlat()">＋ 添加平台</button>
+      </div>
+    </div>
+    <div class="pcg" id="platGrid"></div>
+  </div>
+
+  <div class="page" id="page-platform">
+    <div class="edit-bar" id="editBar">👁 查看模式 · 点击右上角「编辑」可修改内容</div>
+    <div id="platCt"></div>
+  </div>
+
+  <div class="page" id="page-library">
+    <div class="pg-hd"><div class="pg-hd-l"><div class="pg-title">开票信息库</div><div class="pg-sub">所有开票主体税号与账户信息</div></div></div>
+    <div class="toolbar"><input class="fi" style="width:210px" id="libQ" placeholder="搜索主体名称、税号…" oninput="renderLib(this.value)"></div>
+    <div class="lg" id="libGrid"></div>
+  </div>
+
+  <div class="page" id="page-reminders">
+    <div class="pg-hd">
+      <div class="pg-hd-l"><div class="pg-title">提醒规则</div><div class="pg-sub">各平台开票截止日与提醒设置</div></div>
+      <div class="pg-hd-r">
+        <button class="btn btn-g btn-sm" onclick="exportReminders()">↓ 导出规则</button>
+        <button class="btn btn-g btn-sm" onclick="document.getElementById('importRmFile').click()">↑ 导入规则</button>
+        <button class="btn btn-p btn-sm" onclick="openSnapshotModal()">📤 一键生成快照分享</button>
+        <input type="file" id="importRmFile" accept=".json" style="display:none" onchange="importReminders(this)">
+      </div>
+    </div>
+    <div class="rmg" id="rmGrid"></div>
+  </div>
+
+  <div class="page" id="page-log">
+    <div class="pg-hd"><div class="pg-hd-l"><div class="pg-title">操作日志</div><div class="pg-sub">关键操作记录</div></div><div class="pg-hd-r"><button class="btn btn-rl btn-sm" onclick="clearLog()">清空日志</button></div></div>
+    <div class="loglist" id="logList"></div>
+  </div>
+
+  <div class="page active" id="page-config">
+    <div class="pg-hd"><div class="pg-hd-l"><div class="pg-title">数据管理中心</div><div class="pg-sub">统一管理所有数据的导出、导入与备份</div></div></div>
+
+    <!-- 四格卡片布局 -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
+
+      <!-- 全量导出备份 -->
+      <div class="cfg-card">
+        <div class="cfg-card-ico">💾</div>
+        <div class="cfg-card-title">保存备份</div>
+        <div class="cfg-card-desc">将开票数据、结算数据、商城列表全部导出为 JSON 存档文件</div>
+        <button class="btn btn-p" onclick="exportAll()">立即备份</button>
+      </div>
+
+      <!-- 恢复备份 -->
+      <div class="cfg-card">
+        <div class="cfg-card-ico">📂</div>
+        <div class="cfg-card-title">恢复备份</div>
+        <div class="cfg-card-desc">从本地 JSON 存档文件恢复所有数据（开票 + 结算 + 商城）</div>
+        <button class="btn btn-g" onclick="document.getElementById('importAllFile').click()">选择备份文件</button>
+        <input type="file" id="importAllFile" accept=".json" style="display:none" onchange="importAll(this)">
+      </div>
+
+      <!-- 生成快照分享 -->
+      <div class="cfg-card" style="border-color:var(--red);background:linear-gradient(135deg,#fff 60%,var(--rl))">
+        <div class="cfg-card-ico">📤</div>
+        <div class="cfg-card-title">生成快照分享</div>
+        <div class="cfg-card-desc">生成含数据的 HTML 文件，发给同事双击即可查看</div>
+        <button class="btn btn-p" onclick="generateShareSnapshot()">生成快照</button>
+      </div>
+
+      <!-- 重置数据 -->
+      <div class="cfg-card" style="border-color:#fee2e2">
+        <div class="cfg-card-ico">🗑️</div>
+        <div class="cfg-card-title" style="color:var(--red)">重置开票数据</div>
+        <div class="cfg-card-desc">恢复初始平台模板，所有台账与修改将丢失（结算与商城不受影响）</div>
+        <button class="btn btn-rl" onclick="resetData()">重置数据</button>
+      </div>
+
+    </div>
+
+    <!-- 更多操作折叠区 -->
+    <div class="cfg-sec">
+      <div class="cfg-t">🔧 更多操作</div>
+      <div class="cfg-r">
+        <div><div>仅导出开票数据</div><div class="cfg-d">平台流程库、月度台账、<strong>提醒规则</strong>、操作日志</div></div>
+        <button class="btn btn-gr btn-sm" onclick="exportBackup()">↓ 导出 JSON</button>
+      </div>
+      <div class="cfg-r">
+        <div><div>仅导入开票数据</div><div class="cfg-d">从开票备份 JSON 恢复，含提醒规则配置（覆盖当前开票数据）</div></div>
+        <button class="btn btn-g btn-sm" onclick="document.getElementById('importFile').click()">↑ 导入 JSON</button>
+        <input type="file" id="importFile" accept=".json" style="display:none" onchange="importBackup(this)">
+      </div>
+      <div class="cfg-r">
+        <div><div>仅导出结算 &amp; 商城数据</div><div class="cfg-d">历年结算数据 + 商城列表</div></div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-g btn-sm" onclick="exportSettleJson()">↓ JSON</button>
+          <button class="btn btn-g btn-sm" onclick="exportSettleCsv()">↓ CSV</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 开票平台管理 -->
+    <div class="cfg-sec">
+      <div class="cfg-t">🏢 开票平台管理（启用 / 停用）</div>
+      <div id="platCfg"><div class="cfg-r"><div><div>🍊 淘宝联盟</div><div class="cfg-d">每月退税申请流程 · 需分两个账号分别操作</div></div><div style="display: flex; gap: 7px; align-items: center;"><label style="font-size: 12px; color: var(--t3); display: flex; align-items: center; gap: 5px; cursor: pointer;"><input type="checkbox" style="cursor: pointer;">启用</label><button class="btn btn-g btn-xs">查看</button></div></div><div class="cfg-r"><div><div>🔴 京东联盟</div><div class="cfg-d">每月提现开票流程 · 单账号操作</div></div><div style="display: flex; gap: 7px; align-items: center;"><label style="font-size: 12px; color: var(--t3); display: flex; align-items: center; gap: 5px; cursor: pointer;"><input type="checkbox" style="cursor: pointer;">启用</label><button class="btn btn-g btn-xs">查看</button></div></div><div class="cfg-r"><div><div>🎵 抖音穿山甲</div><div class="cfg-d">月度结算单签章 + 发票开具流程</div></div><div style="display: flex; gap: 7px; align-items: center;"><label style="font-size: 12px; color: var(--t3); display: flex; align-items: center; gap: 5px; cursor: pointer;"><input type="checkbox" style="cursor: pointer;">启用</label><button class="btn btn-g btn-xs">查看</button></div></div><div class="cfg-r"><div><div>🌐 成果网</div><div class="cfg-d">广告联盟提现开票流程 · 单账号操作</div></div><div style="display: flex; gap: 7px; align-items: center;"><label style="font-size: 12px; color: var(--t3); display: flex; align-items: center; gap: 5px; cursor: pointer;"><input type="checkbox" style="cursor: pointer;">启用</label><button class="btn btn-g btn-xs">查看</button></div></div><div class="cfg-r"><div><div>🛒 多麦联盟</div><div class="cfg-d">满50元即可提现 · 支持电子增值税专票</div></div><div style="display: flex; gap: 7px; align-items: center;"><label style="font-size: 12px; color: var(--t3); display: flex; align-items: center; gap: 5px; cursor: pointer;"><input type="checkbox" style="cursor: pointer;">启用</label><button class="btn btn-g btn-xs">查看</button></div></div><div class="cfg-r"><div><div>🥡 饿了么</div><div class="cfg-d">月结退税流程 · 每月10号结算上月预估收入</div></div><div style="display: flex; gap: 7px; align-items: center;"><label style="font-size: 12px; color: var(--t3); display: flex; align-items: center; gap: 5px; cursor: pointer;"><input type="checkbox" style="cursor: pointer;">启用</label><button class="btn btn-g btn-xs">查看</button></div></div><div class="cfg-r"><div><div>🧡 美团联盟</div><div class="cfg-d">每月开票后审核通过才发放佣金 · 不支持跨月合并</div></div><div style="display: flex; gap: 7px; align-items: center;"><label style="font-size: 12px; color: var(--t3); display: flex; align-items: center; gap: 5px; cursor: pointer;"><input type="checkbox" style="cursor: pointer;">启用</label><button class="btn btn-g btn-xs">查看</button></div></div><div class="cfg-r"><div><div>✈️ 携程</div><div class="cfg-d">每月1-11号开放结算 · 不同业务对应不同开票主体 · 约半年提现一次</div></div><div style="display: flex; gap: 7px; align-items: center;"><label style="font-size: 12px; color: var(--t3); display: flex; align-items: center; gap: 5px; cursor: pointer;"><input type="checkbox" style="cursor: pointer;">启用</label><button class="btn btn-g btn-xs">查看</button></div></div><div class="cfg-r"><div><div>🏪 苏宁联盟</div><div class="cfg-d">审核通过后打款 · 备注栏必须填写对账单号</div></div><div style="display: flex; gap: 7px; align-items: center;"><label style="font-size: 12px; color: var(--t3); display: flex; align-items: center; gap: 5px; cursor: pointer;"><input type="checkbox" style="cursor: pointer;">启用</label><button class="btn btn-g btn-xs">查看</button></div></div></div>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+<!-- Modals -->
+<div class="mo" id="mo-upload"><div class="md narrow"><button class="md-x" onclick="closeMo('mo-upload')">×</button><h2>上传结算数据</h2><p class="md-sub">支持 .xlsx 格式，自动解析并更新结算数据</p><div class="fg"><label class="fl">目标年份</label><select class="fs" id="up-year"><option value="2025">2025年</option><option value="2026" selected="">2026年</option><option value="2027">2027年（新建）</option></select></div><div class="fg"><label class="fl">覆盖方式</label><select class="fs" id="up-mode"><option value="merge">增量合并（仅更新表格中有数据的月份）</option><option value="overwrite">完全覆盖（替换该年份所有数据）</option></select></div><div class="fg"><label class="fl">选择文件</label><div class="uz" id="up-zone" onclick="document.getElementById('up-file').click()" ondragover="event.preventDefault();this.classList.add('drag')" ondragleave="this.classList.remove('drag')" ondrop="handleDrop(event)"><div class="uz-ico">📂</div><p>点击选择，或拖拽到此处</p><p style="margin-top:3px;font-size:11px">仅支持 .xlsx · 格式：第1列序号、第2列平台名、第3-14列月份数据</p><input type="file" id="up-file" accept=".xlsx" style="display:none" onchange="handleFile(this)"></div><div class="up-prev" id="up-prev" style="">✓ 已解析：返现易2026年度结算数据统计.xlsx · 9 个平台，11 行数据</div></div><div id="up-preview-table" style="margin-top:8px"></div><div class="md-ft"><button class="btn btn-g" onclick="closeMo('mo-upload')">取消</button><button class="btn btn-p" onclick="confirmUpload()">确认上传</button></div></div></div>
+<div class="mo" id="mo-mall"><div class="md narrow"><button class="md-x" onclick="closeMo('mo-mall')">×</button><h2>引入新商城</h2><p class="md-sub">填写新商城基本信息</p><div class="fg"><label class="fl">商城名称 *</label><input class="fi" id="nm-name" placeholder="例：得物、微信小商店"></div><div class="fg2"><div class="fg"><label class="fl">合作情况</label><select class="fs" id="nm-status"><option>正常</option><option>异常</option></select></div><div class="fg"><label class="fl">风险等级</label><select class="fs" id="nm-risk"><option value="正常">低风险</option><option value="中风险">中风险</option><option value="高风险">高风险</option></select></div></div><div class="fg"><label class="fl">返现比例 / 合作说明</label><input class="fi" id="nm-note" placeholder="例：用户返现3%"></div><div class="fg"><label class="fl">行动建议</label><input class="fi" id="nm-action" value="保持现状"></div><div class="md-ft"><button class="btn btn-g" onclick="closeMo('mo-mall')">取消</button><button class="btn btn-p" onclick="confirmAddMall()">确认添加</button></div></div></div>
+<div class="mo" id="mo-export"><div class="md narrow"><button class="md-x" onclick="closeMo('mo-export')">×</button><h2>导出 / 保存数据</h2><p class="md-sub">选择导出范围与格式</p><div class="fg"><label class="fl">导出内容</label><select class="fs" id="exp-type"><option value="all">全部（结算 + 商城）</option><option value="settlement">仅结算数据</option><option value="malls">仅商城列表</option></select></div><div class="fg"><label class="fl">文件格式</label><select class="fs" id="exp-fmt"><option value="json">JSON（可再次导入）</option><option value="csv">CSV（Excel 可打开）</option></select></div><div class="md-ft"><button class="btn btn-g" onclick="closeMo('mo-export')">取消</button><button class="btn btn-p" onclick="confirmExport()">下载文件</button></div></div></div>
+<div class="mo" id="mo-ledger"><div class="md wide"><button class="md-x" onclick="closeMo('mo-ledger')">×</button><h2 id="lm-title">新建开票记录</h2>
+<div class="fg2"><div class="fg"><label class="fl">月份 *</label><select class="fs" id="lm-mon"></select></div><div class="fg"><label class="fl">平台 *</label><select class="fs" id="lm-plat" onchange="autofillEntity()"></select></div></div>
+<div class="fg2"><div class="fg"><label class="fl">结算月份</label><input class="fi" id="lm-settle" placeholder="如：2026年3月"></div><div class="fg"><label class="fl">开票主体 <span style="font-size:10px;color:var(--green)">(自动带入)</span></label><input class="fi" id="lm-entity" placeholder="选择平台后自动填入"></div></div>
+<div class="fg3"><div class="fg"><label class="fl">平台结算金额（元）</label><input class="fi" id="lm-pamt" type="number" step="0.01" oninput="calcDiff()"></div><div class="fg"><label class="fl">实际开票金额（元）</label><input class="fi" id="lm-ramt" type="number" step="0.01" oninput="calcDiff()"></div><div class="fg"><label class="fl">差额（自动）</label><div id="lm-diff" style="padding:6px 9px;border:1px solid var(--br);border-radius:5px;font-size:12.5px;background:#fafafa;color:var(--t3)">—</div></div></div>
+<div class="fg2"><div class="fg"><label class="fl">发票号码</label><input class="fi" id="lm-inv" placeholder="财务开票后填写"></div><div class="fg"><label class="fl">当前状态</label><select class="fs" id="lm-status"><option>未开始</option><option>已取数</option><option>已提交收款申请</option><option>财务已开票</option><option>已上传发票</option><option>平台审核中</option><option>已到账</option><option>已归档</option><option>异常/退回</option><option>本月无需处理</option></select></div></div>
+<div class="fg"><label class="fl">异常备注</label><textarea class="fta" id="lm-remark" placeholder="记录特殊情况：金额不一致、退回重开、逾期等"></textarea></div>
+<div class="md-ft"><button class="btn btn-g" onclick="closeMo('mo-ledger')">取消</button><button class="btn btn-p" onclick="saveLedger()">保存记录</button></div></div></div>
+<div class="mo" id="mo-plat"><div class="md narrow"><button class="md-x" onclick="closeMo('mo-plat')">×</button><h2>添加开票平台</h2><div class="fg"><label class="fl">平台名称 *</label><input class="fi" id="np-name" placeholder="如：拼多多联盟"></div><div class="fg2"><div class="fg"><label class="fl">图标（Emoji）</label><input class="fi" id="np-icon" placeholder="🛍️" maxlength="4"></div><div class="fg"><label class="fl">简介</label><input class="fi" id="np-desc" placeholder="每月提现开票"></div></div><div class="fg"><label class="fl">主题颜色</label><div class="cr" id="colorRow"></div></div><div class="md-ft"><button class="btn btn-g" onclick="closeMo('mo-plat')">取消</button><button class="btn btn-p" onclick="confirmAddPlat()">添加平台</button></div></div></div>
+<div class="mo" id="mo-rm"><div class="md narrow"><button class="md-x" onclick="closeMo('mo-rm')">×</button><h2 id="rm-title">编辑提醒规则</h2><div class="fg2"><div class="fg"><label class="fl">开票周期</label><select class="fs" id="rm-cycle"><option>每月</option><option>每季度</option><option>半年一次</option><option>每年</option></select></div><div class="fg"><label class="fl">截止日（每月几号）</label><input class="fi" id="rm-dl" type="number" min="1" max="31" placeholder="如：15"></div></div><div class="fg"><label class="fl">特殊说明</label><input class="fi" id="rm-note" placeholder="如：携程仅1~11号开放结算"></div><div class="fg" style="display:flex;align-items:center;gap:10px"><label class="fl" style="margin:0">启用此平台提醒</label><input type="checkbox" id="rm-en" style="width:15px;height:15px;cursor:pointer"></div><div class="md-ft"><button class="btn btn-g" onclick="closeMo('mo-rm')">取消</button><button class="btn btn-p" onclick="saveReminder()">保存</button></div></div></div>
+<div class="toast" id="toast">✓ 全量备份已导出</div>
+<script>
+const MONTHS=['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'];
+const MONTHS3=['一月','二月','三月'];
+let data2025={"淘宝联盟(合计)":[50438.74,0,4411.43,85970.33,40500.93,54834.57,33185.83,0,72982.92,24088.42,10027.03,84377.35],"京东":[40525.49,32081.94,23106.71,33354.39,38201.21,43193.06,48216.29,34208.78,26257.18,32717.33,34681.42,44717.8],"拼多多":[3715,2970,2280,3213.33,3627.45,3900,3000,4500,2800,2600,0,4700],"美团":[1263.43,1087.91,947.44,1087.85,742.04,176.67,95.52,0,0,0,0,0],"饿了么":[0,0,0,2217.02,304.01,351.88,357.59,300.19,0,307.82,154.12,268],"成果网":[0,0,0,7578.86,1054.16,788.98,1607.48,3074.61,0,1138.22,1346.07,1071.95],"抖音穿山甲":[0,0,0,0,0,0,61.32,1265.46,1109.76,407.3,12.29,418.48],"唯品会":[0,0,0,0,0,0,14198.35,0,0,0,0,0],"携程":[0,0,0,2482.86,554.13,0,0,0,0,0,5378.64,0],"Points.com":[0,0,0,0,0,0,0,7000,0,0,0,0],"多麦联盟":[0,0,0,731.92,0,0,282.98,0,296.28,0,0,73.36],"其他":[0,0,0,891.26,0,0,0,0,0,0,0,0]};
+let data2026={"淘宝联盟(合计)":[59620.97,0,31748.14,28464.550000000003,4959.280000000001,47259.82,0,0,0,0,0,0],"美团":[0,0,0,0,0,445.13,0,0,0,0,0,0],"京东":[31097.05,0,46189.78,20760.88,20242.72,26673.1,0,0,0,0,0,0],"成果网":[547.1,811.95,0,0,2862.88,0,0,0,0,0,0,0],"抖音穿山甲":[0,1453.62,1182.9,449.23,471.64,549.29,0,0,0,0,0,0],"饿了么":[253.32,0,286.95,114.63,134.3,82.41,0,0,0,0,0,0],"拼多多":[0,0,3200,0,0,6400,0,0,0,0,0,0],"携程":[0,0,0,0,3180.52,0,0,0,0,0,0,0],"多麦联盟":[200.24,0,213.95,0,0,106.42,0,0,0,0,0,0]};
+let mallData=[{"name":"淘宝","status":"正常","risk":"正常","note":"热门下单平台","action":"保持现状"},{"name":"京东","status":"正常","risk":"正常","note":"热门下单平台","action":"保持现状"},{"name":"拼多多","status":"正常","risk":"正常","note":"热门下单平台","action":"保持现状"},{"name":"唯品会","status":"正常","risk":"正常","note":"个人号推广","action":"保持现状"},{"name":"洲际酒店","status":"正常","risk":"正常","note":"用户返现2%","action":"保持现状"},{"name":"美团外卖","status":"正常","risk":"中风险","note":"很多订单返现0.01","action":"存在异常订单，需规范用户行为"},{"name":"饿了么","status":"正常","risk":"正常","note":"—","action":"保持现状"},{"name":"飞猪","status":"正常","risk":"中风险","note":"很多订单返现0.01","action":"存在异常订单，需规范用户行为"},{"name":"天猫超市","status":"异常","risk":"高风险","note":"无相关订单记录","action":"长期无订单，建议清理"},{"name":"AGODA","status":"正常","risk":"正常","note":"用户返现2%，频率较低","action":"保持现状"},{"name":"香港通信上台","status":"正常","risk":"正常","note":"—","action":"保持现状"},{"name":"亚马逊中国","status":"异常","risk":"高风险","note":"最近订单：2023-12-31","action":"订单停滞，需激活或下架"},{"name":"苹果中国","status":"异常","risk":"高风险","note":"无相关订单记录","action":"长期无订单，建议清理"},{"name":"小米有品","status":"异常","risk":"高风险","note":"最近几笔返现为0","action":"返现为0，需核实合作条款"},{"name":"网易严选","status":"异常","risk":"高风险","note":"最近订单：2024-12-26","action":"订单停滞，需激活或下架"},{"name":"中免日上","status":"异常","risk":"高风险","note":"官方暂停推广","action":"订单停滞，需激活或下架"},{"name":"苏宁","status":"正常","risk":"正常","note":"下单频率较低","action":"保持现状"},{"name":"美团生鲜","status":"异常","risk":"高风险","note":"无相关订单记录","action":"长期无订单，建议清理"},{"name":"肯德基","status":"异常","risk":"高风险","note":"最近订单：2022/11/3","action":"订单停滞，需激活或下架"},{"name":"携程","status":"正常","risk":"正常","note":"—","action":"保持现状"},{"name":"points.com","status":"正常","risk":"正常","note":"—","action":"保持现状"},{"name":"美团酒店","status":"异常","risk":"高风险","note":"最近订单：2021/8/8","action":"订单停滞，需激活或下架"},{"name":"国美商城","status":"异常","risk":"高风险","note":"最近订单：2021/12/3","action":"订单停滞，需激活或下架"},{"name":"途牛旅游","status":"异常","risk":"高风险","note":"最近订单：2023-06-26","action":"订单停滞，需激活或下架"},{"name":"同程旅游","status":"异常","risk":"高风险","note":"无相关订单记录","action":"长期无订单，建议清理"},{"name":"滨客","status":"异常","risk":"高风险","note":"最近订单：2024/4/7","action":"订单停滞，需激活或下架"},{"name":"滴滴打车","status":"正常","risk":"正常","note":"—","action":"保持现状"},{"name":"一嗨租车","status":"异常","risk":"高风险","note":"最近订单：2021/4/12","action":"订单停滞，需激活或下架"},{"name":"特步中国","status":"异常","risk":"高风险","note":"无相关订单记录","action":"长期无订单，建议清理"},{"name":"迪卡侬中国","status":"异常","risk":"高风险","note":"无相关订单记录","action":"长期无订单，建议清理"},{"name":"微软中国","status":"异常","risk":"高风险","note":"无相关订单记录","action":"长期无订单，建议清理"},{"name":"联想商城","status":"异常","risk":"高风险","note":"最近订单：2025-06-12（补单）","action":"订单停滞，需激活或下架"},{"name":"VIVO","status":"异常","risk":"高风险","note":"无相关订单记录","action":"长期无订单，建议清理"},{"name":"国药网","status":"异常","risk":"高风险","note":"无相关订单记录","action":"长期无订单，建议清理"},{"name":"叮当快药","status":"异常","risk":"高风险","note":"最近订单：2021/12/16","action":"订单停滞，需激活或下架"},{"name":"考拉海购","status":"异常","risk":"高风险","note":"最近订单：2024/9/30","action":"订单停滞，需激活或下架"}];
+const SK='invoicePlatform_v4';const SK2='fanxianyi_settle_v1';
+const COLS=['#e8734a','#d94f4f','#3ecfb2','#a78bfa','#f59e0b','#34d399','#fb923c','#38bdf8','#f472b6','#818cf8','#facc15','#16a34a'];
+const STATUSES=['未开始','已取数','已提交收款申请','财务已开票','已上传发票','平台审核中','已到账','已归档','异常/退回','本月无需处理'];
+const DONE=['已到账','已归档','本月无需处理'];
+const ANOMALY=['异常','退回','重开','错误','不一致','逾期','问题'];
+const PROGRESS={'未开始':0,'已取数':14,'已提交收款申请':28,'财务已开票':42,'已上传发票':57,'平台审核中':71,'已到账':92,'已归档':100,'本月无需处理':100,'异常/退回':0};
+const NEXTSTEP={'未开始':'登录平台取数','已取数':'提交内部收款申请','已提交收款申请':'跟进审批与财务开票','财务已开票':'上传发票至联盟平台','已上传发票':'跟进平台审核','平台审核中':'等待平台打款','已到账':'归档凭证完结','已归档':'本月已完结','异常/退回':'处理异常重新提交','本月无需处理':'本月无需操作'};
+const DD={"platforms":[{"id":"taobao","name":"淘宝联盟","icon":"🍊","color":"#e8734a","desc":"每月退税申请流程 · 需分两个账号分别操作","cards":[{"label":"开票时间","value":"每月 15 号","h":true},{"label":"开票内容","value":"上上月发票"},{"label":"账号数量","value":"2 个账号"},{"label":"开票主体","value":"聚客 + 云算力"}],"notes":["💡 淘宝财务会预先扣税，开票后平台将多交的税退回账号余额。\n⚠️ 每年 2～3 月淘宝结清上年佣金，逾期不提交发票将失去未退税佣金。"],"warnings":[],"accounts":[{"title":"账号一 · 聚客主体","rows":[["账号","gzplanpoint"],["密码","QWER12TY"],["开票主体","聚客网络科技"]]},{"title":"账号二 · 云算力主体","rows":[["账号","cashbackease"],["密码","QWER12TY"],["开票主体","云算力"]]}],"steps":[{"title":"登录淘宝联盟平台","desc":"使用对应账号密码登录，两个账号需分别操作。","link":"https://pub.alimama.com/"},{"title":"进入后台","desc":"登录后点击页面中的「进入后台」按钮。"},{"title":"扣税/款管理","desc":"点击顶部「我的账户」→「扣税/款管理」。"},{"title":"发起退税申请","desc":"点击「申请退款」，勾选需要退税的月份，点击「创建申请并上传发票」，记下本月需要开票的金额。"},{"title":"在聚客后台提交收款申请","desc":"登录聚客后台，进入「申请管理」→「收款申请」，点击右上角「+」新增收款申请，填写开票信息并提交。","link":"https://project.planpoint.cn/index.php"},{"title":"等待经理审批 → 财务开票","desc":"提交后等待经理审批，审批通过后财务开具增值税专用发票。"},{"title":"上传发票至淘宝联盟","desc":"收到发票后回到淘宝联盟平台，在退税申请中上传发票，等待平台审核。"},{"title":"确认退税到账","desc":"「退税中」→ 尚未完成\n「已退税」→ 退税完成 ✓"}],"inv":[{"title":"开票信息参考","note":"以下为常用开票主体，实际以平台结算单中的主体为准。","blocks":[{"title":"杭州阿里妈妈软件服务有限公司","rows":[["纳税人识别号","91330110311381883Y"],["开户行","招商银行杭州高新支行"],["银行账号","571907738910301"],["地址电话","杭州余杭区五常街道文一西路969号6幢2层201室，0571-85022088"],["开票类型","增值税专用发票"],["开票项目","*信息技术服务*技术服务费"],["邮寄地址","西安市雁塔区天谷八路156号软件新城二期云汇谷A2小邮局"],["收件人","淘宝税务组收，0571-85022088"]]},{"title":"阿里巴巴华南技术有限公司上海第一分公司","rows":[["纳税人识别号","91310120MA1HTHJ34Y"],["开户行","招商银行上海分行营业部"],["银行账号","121935657710301"],["地址电话","上海市奉贤区新杨公路1800弄2幢3472室，0571-85022088"],["开票类型","增值税专用发票"],["开票项目","*信息技术服务*技术服务费"],["邮寄地址","西安市雁塔区天谷八路156号软件新城二期云汇谷A2小邮局"],["收件人","淘宝税务组收，0571-85022088"]]},{"title":"杭州阿里妈妈淘联信息技术有限公司","rows":[["纳税人识别号","91330110MA7KA7HR0J"],["开户行","招商银行股份有限公司杭州高教路支行"],["银行账号","571917686310902"],["地址电话","浙江省杭州市余杭区五常街道文一西路969号3幢4层471，0571-85022088"],["开票类型","增值税专用发票"],["开票项目","*信息技术服务*技术服务费"],["邮寄地址","陕西省西安市雁塔区天谷八路156号软件新城二期云汇谷A2小邮局"],["收件人","淘宝税务组，0571-85022088"]]}]}],"enabled":true},{"id":"jingdong","name":"京东联盟","icon":"🔴","color":"#d94f4f","desc":"每月提现开票流程 · 单账号操作","cards":[{"label":"开票时间","value":"每月 20 号","h":true},{"label":"开票内容","value":"上月发票"},{"label":"交付物","value":"发票 1 张"},{"label":"开票主体","value":"聚客网络科技"}],"notes":["💡 如 2 月 20 日开出的是 1 月的发票。平台偶尔会调整具体日期，请留意通知。"],"warnings":[],"accounts":[],"steps":[{"title":"登录京东联盟平台","desc":"输入账号和密码登录。","link":"https://union.jd.com/index"},{"title":"进入结算中心","desc":"点击顶部横向菜单栏中的「结算中心」。"},{"title":"查看提现记录","desc":"进入结算中心后，点击左侧竖向菜单栏中的「提现记录」。"},{"title":"获取开票金额","desc":"点击需要开票月份的「开票信息」，记录当月所需开票金额。"},{"title":"在聚客后台提交收款申请","desc":"登录聚客后台，进入「申请管理」→「收款申请」，点击右上角「+」新增收款申请，填写开票信息并提交。","link":"https://project.planpoint.cn/index.php"},{"title":"等待经理审核 → 财务开票","desc":"提交后等待经理审批，审批通过后财务开具发票。"},{"title":"上传发票至京东联盟平台","desc":"收到发票后回到京东联盟平台，上传发票完成开票流程。"},{"title":"确认支付到账","desc":"等待平台审核并确认款项到账 ✓"}],"inv":[],"enabled":true},{"id":"douyin","name":"抖音穿山甲","icon":"🎵","color":"#3ecfb2","desc":"月度结算单签章 + 发票开具流程","cards":[{"label":"结算单时间","value":"次月第10工作日","h":true},{"label":"发票类型","value":"增值税专用发票"},{"label":"发票格式","value":"OFD格式（电子）"},{"label":"开票项目","value":"信息服务费"}],"notes":[],"warnings":["⚠️ 月度结算单在「次月第10个工作日」前展示，请展示后及时确认签章，不要拖延。"],"accounts":[{"title":"穿山甲后台账号","rows":[["账号","Daicy@planpoint.cn"],["密码","Juke2023.（最后一位为实心句号）"],["验证码","找苏老板获取"]]}],"steps":[{"title":"登录抖音穿山甲后台","desc":"使用账号密码登录，验证码需向苏老板获取。","link":"https://www.csjplatform.com/union/media/login?invite_code=c8ce7d4a4673"},{"title":"查看结算单","desc":"每月初第10个工作日左右，平台提供上月结算单，进入「结算」页面查看。\n· 结算单详情：结算→结算管理→其他结算→选择业务→结算单详情→导出基础金额\n· 订单明细：成长工具→乘风计划→订单明细报表"},{"title":"确认并签章结算单","desc":"核对结算单金额无误后，点击「签订」按钮进行签章。签章与原合同具有同等法律效力，请及时操作。"},{"title":"开具发票","desc":"根据结算单上的开票主体信息开具增值税专用发票（OFD格式）。结算单上能对应看到开票结算主体。"},{"title":"上传电子发票","desc":"电子发票无需邮寄，通过结算单列表上方「批量上传发票」入口提交即可。"}],"inv":[{"title":"开票信息","blocks":[{"title":"湖北巨量引擎科技有限公司","rows":[["纳税人识别号","91420100MA7JTL9R0F"],["开户行","招商银行股份有限公司武汉分行营业部"],["银行账号","127916401810301"],["地址电话","武汉东湖新技术开发区凌家山南路1号光谷企业天地7号楼1-4层1号404，010-58341810"],["开票类型","增值税专用发票（OFD格式）"],["开票项目","信息服务费"],["税率","一般纳税人6%"],["上传方式","结算单列表→批量上传发票"]]}]}],"enabled":true},{"id":"chengguo","name":"成果网","icon":"🌐","color":"#a78bfa","desc":"广告联盟提现开票流程 · 单账号操作","cards":[{"label":"账号","value":"help@planpoint.cn"},{"label":"密码","value":"QWER12TY"},{"label":"开票项目","value":"信息技术服务·信息服务费"}],"notes":[],"warnings":[],"accounts":[],"steps":[{"title":"登录成果网广告联盟","desc":"使用账号密码登录成果网后台。","link":"https://www.ga-net.com/"},{"title":"获取开票金额","desc":"在平台后台查看当前可提现佣金金额，记录开票所需金额。"},{"title":"在聚客后台提交收款申请","desc":"登录聚客后台，进入「申请管理」→「收款申请」，点击「+」新增申请，填写开票信息提交。","link":"https://project.planpoint.cn/index.php"},{"title":"等待经理审批 → 财务开票","desc":"提交后等待经理审批，审批通过后财务开具增值税专用发票。"},{"title":"提交发票完成结算","desc":"收到发票后回到成果网平台提交，等待审核到账。"}],"inv":[{"title":"开票信息","blocks":[{"title":"英的吉（上海）网络科技有限公司","rows":[["纳税人识别号","91310115MA1H8A3F7A"],["开户行","中国民生银行上海陆家嘴支行"],["银行账号","698679286"],["地址电话","中国（上海）自由贸易试验区临港新片区环湖西二路888号C楼，+86 21-6989-1085"],["开票类型","增值税专用发票"],["开票项目","*信息技术服务*信息服务费"]]}]}],"enabled":true},{"id":"duomai","name":"多麦联盟","icon":"🛒","color":"#f59e0b","desc":"满50元即可提现 · 支持电子增值税专票","cards":[{"label":"账号","value":"help@planpoint.cn"},{"label":"密码","value":"QWER12TY"},{"label":"提现门槛","value":"满 50 元","h":true},{"label":"发票方式","value":"电子增值税专票"}],"notes":[],"warnings":[],"accounts":[],"steps":[{"title":"登录多麦联盟","desc":"使用账号密码登录多麦联盟官网。","link":"https://www.duomai.com/index"},{"title":"申请提现","desc":"点击「财务管理」→「资金账户」→「去提现」。佣金满50元即可发起提现申请。"},{"title":"开具电子发票并发送","desc":"按照开票信息开具增值税专用发票（支持电子发票）。\n发票发送方式（二选一）：\n· 发送至邮箱：owen@duomai.com\n· 或PDF直接发送到多麦股份企业微信"}],"inv":[{"title":"开票信息","blocks":[{"title":"杭州多麦电子商务股份有限公司","rows":[["纳税人识别号","91330100560574264C"],["开户行","工商银行九堡支行"],["银行账号","1202004719800047409"],["地址电话","浙江省杭州市上城区普盛巷9号东谷创业中心1幢9楼，0571-56638585"],["开票类型","增值税专用发票（可开电子）"],["开票项目","信息服务费"],["发票邮箱","owen@duomai.com"]]}]}],"enabled":true},{"id":"eleme","name":"饿了么","icon":"🥡","color":"#34d399","desc":"月结退税流程 · 每月10号结算上月预估收入","cards":[{"label":"结算时间","value":"每月 10 号","h":true},{"label":"结算内容","value":"上月预估收入"},{"label":"发票格式","value":"OFD格式（电子）"},{"label":"退税截止","value":"结算后5个自然月内"}],"notes":["⚠️ 退税申请操作时间为M+1个月（如1月订单2月10日结算，则2月11日起可申请）。\n退税申请最晚截止时间为结算后5个自然月内。"],"warnings":[],"accounts":[{"title":"阿里巴巴本地生活联盟后台","rows":[["账号","18620212494"],["密码","QWER12TY"]]}],"steps":[{"title":"登录饿了么口碑联盟后台","desc":"使用手机号和密码登录。","link":"https://union.ele.me/"},{"title":"进入扣税管理","desc":"点击「账户管理」→「结算中心」→「扣税管理」→ 选择饿了么，点击「+ 申请退税」。"},{"title":"选择退税月份","desc":"勾选需要退税的代扣月份，点击下一步申请退税。"},{"title":"上传电子发票（OFD格式）","desc":"按照开票信息开具增值税专用发票，上传OFD格式电子发票，确认信息后点击提交。"},{"title":"查看处理进度","desc":"通过「扣税管理」查看税单状态，等待平台处理完成。"}],"inv":[{"title":"开票信息","note":"2022年5月1日（含）之后的结算金额，开票主体为拉扎斯网络科技（上海）有限公司。","blocks":[{"title":"拉扎斯网络科技（上海）有限公司","rows":[["纳税人识别号","913100005821193690"],["开户行","工商银行上海普陀支行"],["银行账号","1001323519100011019"],["地址电话","上海市普陀区真北路788号507室，021-80241717"],["开票类型","增值税专用发票"],["开票项目","*现代服务*或*信息技术服务*推广服务费"],["税率","6%"]]}]}],"enabled":true},{"id":"meituan","name":"美团联盟","icon":"🧡","color":"#fb923c","desc":"每月开票后审核通过才发放佣金 · 不支持跨月合并","cards":[{"label":"开票时间","value":"每月 1 号","h":true},{"label":"开票内容","value":"上月发票"},{"label":"打款时间","value":"每月 10 号"},{"label":"交付物","value":"发票 1 张"}],"notes":[],"warnings":["⚠️ 请将月度账单的付款单号打在发票备注栏中。\n⚠️ 美团不支持累计多个月统一开票，需分月提交发票。"],"accounts":[],"steps":[{"title":"登录美团联盟平台","desc":"输入手机号和密码登录。","link":"https://union.meituan.com/v2/activityList"},{"title":"进入结算中心","desc":"进入账号后台，点击「结算中心」，下拉页面找到各月份佣金信息，记录本月开票金额及付款单号。"},{"title":"在聚客后台提交收款申请","desc":"登录聚客后台，进入「申请管理」→「收款申请」，点击「+」新增申请，填写开票信息，备注栏填写付款单号。","link":"https://project.planpoint.cn/index.php"},{"title":"等待经理审批 → 财务开票","desc":"提交后等待经理审批，审批通过后财务开具发票。"},{"title":"提交发票至美团联盟","desc":"收到发票后回到美团联盟平台，找到对应月份，点击「提交发票信息」，填写发票地址信息及发票信息后提交。"},{"title":"发送邮件 + 确认打款","desc":"按要求发送邮件，并定期检查打款状态，确保变成「打款成功」✓"}],"inv":[],"enabled":true},{"id":"xicheng","name":"携程","icon":"✈️","color":"#38bdf8","desc":"每月1-11号开放结算 · 不同业务对应不同开票主体 · 约半年提现一次","cards":[{"label":"开票时间","value":"每月 1~11 号","h":true},{"label":"提现频率","value":"约每半年一次"},{"label":"发票数量","value":"N张（按业务类型）"}],"notes":[],"warnings":["⚠️ 携程旗下不同产品属于不同支付公司，需按业务类型分开开票，务必仔细核对，计算出错需重新开票。"],"accounts":[],"steps":[{"title":"下载并整理Excel佣金明细","desc":"筛选出「申请中」状态的佣金明细，按业务类型分类汇总各类型佣金金额和月份，自行记录留存。"},{"title":"核对总金额","desc":"合计自己记录表的金额，与平台提现金额核对一致。\n提现金额查询路径：个人中心→奖励结算→提现记录"},{"title":"按业务类型分别开票","desc":"参照下方「业务类型对应开票公司」表，按不同业务类型分别开具发票，每种业务对应一张发票。"},{"title":"在聚客后台提交收款申请","desc":"登录聚客后台，按每个业务类型（每张发票）分别填写收款申请信息。","link":"https://project.planpoint.cn/index.php"},{"title":"等待审批 → 财务开票 → 行政寄出","desc":"等待经理审批，财务开票后行政寄出发票至对应邮寄地址。"},{"title":"确认打款状态","desc":"定期查看携程后台：个人中心→奖励结算→提现记录\n状态变为「支付成功」则完成提现 ✓"}],"inv":[{"title":"业务类型对应开票公司","blocks":[{"title":"业务对照表","rows":[["国内门票/国内玩乐","万程（上海）旅行社有限公司"],["火车票","上海顺途科技有限公司"],["机票/用车/租车/超级会员/权益等","上海华程西南国际旅行社有限公司"],["旅游（团队游/机酒/邮轮等）","上海携程国际旅行社有限公司"],["现付酒店","携程计算机技术（上海）有限公司"],["预付酒店/团购/民宿等","上海赫程国际旅行社有限公司"],["汽车票","上海极途信息技术有限公司"]]}]},{"title":"各开票公司详细信息","blocks":[{"title":"携程计算机技术（上海）有限公司·现付酒店","rows":[["税号","91310000607284919B"],["地址电话","上海市徐汇区虹漕路421号63栋3楼，021-34064880"],["开户行","中国工商银行上海市漕河泾开发区支行"],["银行账号","1001266309200013724"]]},{"title":"上海携程国际旅行社有限公司·旅游","rows":[["税号","913101107390065156"],["地址电话","上海市长宁区金钟路968号凌空SOHO，021-34064880"],["开户行","中国工商银行上海市漕河泾开发区支行"],["银行账号","1001266309200070179"]]},{"title":"上海华程西南国际旅行社有限公司·机票/用车等","rows":[["税号","91310105134638405A"],["地址电话","上海市长宁区金钟路968号凌空SOHO，021-34064880"],["开户行","中国工商银行上海市漕河泾开发区支行"],["银行账号","1001266309200016953"]]},{"title":"上海顺途科技有限公司·火车票","rows":[["税号","91310105569628206W"],["地址电话","上海市长宁区金钟路968号凌空SOHO，021-34064880"],["开户行","农业银行虹桥临空经济园区支行"],["银行账号","03471600040001103"]]},{"title":"万程（上海）旅行社有限公司·国内门票/玩乐","rows":[["税号","9131000007813907XP"],["地址电话","上海金钟路968号凌空SOHO，021-34064880"],["开户行","上海浦东发展银行静安支行"],["银行账号","98210155300002956"]]},{"title":"上海赫程国际旅行社有限公司·预付酒店/民宿等","rows":[["税号","91310110350849784X"],["地址电话","上海市长宁区金钟路968号凌空SOHO，021-34064880"],["开户行","中国工商银行股份有限公司上海市桂林路支行"],["银行账号","1001294809200130726"]]},{"title":"上海极途信息技术有限公司·汽车票","rows":[["税号","913101143243799778"],["地址电话","上海市长宁区金钟路968号凌空SOHO，021-34064880"],["开户行","建设银行吴中路支行"],["银行账号","31001601114050021250"]]}]},{"title":"发票邮寄地址","blocks":[{"title":"统一邮寄信息","rows":[["邮寄地址","上海市长宁区金钟路968号SOHO 18栋"],["收件人","陆婷婷 / 江思洁"],["联系电话","021-34064880"]]}]}],"enabled":true},{"id":"suning","name":"苏宁联盟","icon":"🏪","color":"#f472b6","desc":"审核通过后打款 · 备注栏必须填写对账单号","cards":[{"label":"开票时间","value":"每月 20 号","h":true},{"label":"开票内容","value":"上月发票"},{"label":"确认截止","value":"每月 20~26 日"},{"label":"账号","value":"gzplanpoint"}],"notes":[],"warnings":["⚠️ 月度结算需在每月20日至26日内确认，超过26日系统将自动确认。\n⚠️ 发票备注栏必须填写当月对账单号，否则无法完成发票校验。\n⚠️ 上传发票图片大小不可超过1MB，超出请用截图工具截取后上传。"],"accounts":[{"title":"苏宁联盟后台","rows":[["账号","gzplanpoint"],["密码","QWER12TY"],["手机号（发票页）","13570130890"]]}],"steps":[{"title":"登录苏宁联盟","desc":"打开网站，点击「立即登录」，选择「账户登录」，输入账号密码后点击「进入联盟」。","link":"http://sums.suning.com/union/home.htm"},{"title":"进入结算概况","desc":"鼠标移至横向菜单栏「结算中心」，在子菜单中点击「结算概况」。"},{"title":"确认结算数据","desc":"核对左侧月份是否为需要开票的月份，确认无误后点击右侧「待确认」按钮，弹框中点击「确认」。"},{"title":"获取开票金额和对账单号","desc":"确认后「待确认」按钮变为「开票」，点击后取得开票金额和当月对账单号（备注栏必填）。"},{"title":"在聚客后台提交收款申请","desc":"登录聚客后台，按发票和邮寄信息填写收款申请，备注栏填写对账单号（如：1905YG7035818585）。","link":"https://project.planpoint.cn/index.php"},{"title":"等待审批 → 财务开票 → 行政寄出","desc":"等待经理审批，财务开票后行政寄出发票，行政会返回发票和快递信息。"},{"title":"在苏宁平台填写发票信息","desc":"回到苏宁联盟，重复步骤1-3后点击「开票」→「填写开票信息」，填入发票信息，手机号填写13570130890，保存后点击「提交发票信息」。"},{"title":"确认打款状态","desc":"点击「结算明细」找到对应申请，状态从「待付款」变为「付款成功」则完成结算 ✓"}],"inv":[{"title":"开票信息","blocks":[{"title":"南京苏宁宜品商业管理有限公司","rows":[["纳税人识别号","91320118MA7KH4PN9D"],["开户行","江苏苏宁银行股份有限公司"],["银行账号","18801001700013684"],["地址电话","南京市高淳区桠溪街道国华路66号13幢215室，025-66996699"],["开票类型","增值税专用发票"],["开票项目","*信息技术服务*技术服务费"],["邮寄地址","南京市玄武区徐庄软件园苏宁大道1号四号楼1楼单证部"],["收件人","收发岗，025-86303030"]]}]}],"enabled":true}],"ledger":[],"log":[{"time":"2026-07-08T10:55:39.048Z","action":"全量导出数据备份","cat":"system"},{"time":"2026-07-08T10:55:20.685Z","action":"上传结算数据：2026年，9个平台","cat":"system"}],"reminders":{}};
+
+let D,curPage='overview',curPlatId=null,editMode=false,selColor=COLS[0];
+let editIdx=null,ledgFilter='全部',rmPlatId=null;
+let tc,pc,cc,sbc,spInit=false;
+
+function clone(x){return JSON.parse(JSON.stringify(x))}
+async function loadAsync(){D=clone(DD);if(!D.ledger)D.ledger=[];if(!D.log)D.log=[];if(!D.reminders)D.reminders={};D.platforms.forEach(function(p){if(p.enabled===undefined)p.enabled=true;});}
+function load(){
+  D=clone(DD);D.ledger=[];D.log=[];D.reminders={};D.platforms.forEach(p=>p.enabled=true);
+  renderMalls();
+  loadAsync().then(()=>{renderNav();renderByPage();if(curPage==='overview')buildCharts();});
+}
+function save(){/* snapshot: read-only */}
+function saveSettle(){/* snapshot: read-only */}
+function saveData(){collectEdits();save();addLog('保存平台流程','edit');toast('✓ 已保存')}
+function addLog(a,c='system'){if(!D.log)D.log=[];D.log.unshift({time:new Date().toISOString(),action:a,cat:c});if(D.log.length>300)D.log=D.log.slice(0,300);}
+
+const PAGENAMES={overview:'总览看板',settlement:'结算数据',malls:'商城列表',invoice:'开票看板',ledger:'月度台账',summary:'月度汇总',platforms:'平台流程库',platform:'平台详情',library:'开票信息库',reminders:'提醒规则',log:'操作日志',config:'数据管理中心'};
+function renderNav(){
+  document.querySelectorAll('.ni[id]').forEach(el=>{
+    const pg=el.id.replace('N-','');
+    el.classList.toggle('active',pg===curPage||(pg==='platforms'&&curPage==='platform'));
+  });
+}
+function go(id,el){
+  curPage=id;curPlatId=null;editMode=false;
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  const pg=document.getElementById('page-'+id);if(pg)pg.classList.add('active');
+  document.getElementById('page-platform').classList.remove('em');
+  ['etb','svb','dpb'].forEach(b=>document.getElementById(b).style.display='none');
+  document.getElementById('etb').textContent='✏️ 编辑';
+  document.getElementById('tb-title').textContent=PAGENAMES[id]||id;
+  document.getElementById('tb-sub').textContent='';
+  renderNav();renderByPage();
+  if(el){document.querySelectorAll('.ni[id]').forEach(n=>n.classList.remove('active'));el.classList.add('active');}
+}
+function goPlat(id){
+  if(editMode)collectEdits();
+  curPlatId=id;curPage='platform';editMode=false;
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-platform').classList.add('active');
+  document.getElementById('page-platform').classList.remove('em');
+  document.getElementById('etb').style.display='';
+  document.getElementById('etb').textContent='✏️ 编辑';
+  ['svb','dpb'].forEach(b=>document.getElementById(b).style.display='none');
+  const p=D.platforms.find(x=>x.id===id);
+  document.getElementById('tb-title').textContent=p?p.name:'平台详情';
+  document.getElementById('tb-sub').textContent=p?p.desc:'';
+  renderNav();renderPlatform();
+}
+function renderByPage(){
+  ({overview:buildCharts,settlement:renderSettle,malls:renderMalls,invoice:renderInvDash,ledger:renderLedger,summary:renderSummary,platforms:renderPlatList,platform:renderPlatform,library:renderLib,reminders:renderReminders,log:renderLog,config:renderConfig})[curPage]?.();
+}
+
+const sumY=d=>Object.values(d).reduce((t,a)=>t+a.reduce((s,v)=>s+v,0),0);
+const mTotal=(d,m)=>Object.values(d).reduce((t,a)=>t+a[m],0);
+const fmt=v=>'¥'+Math.round(v).toLocaleString('zh-CN');
+
+function buildCharts(){
+  document.getElementById('total2025').textContent=fmt(sumY(data2025));
+  document.getElementById('total2026').textContent=fmt(sumY(data2026));
+  // Update subtitle to show how many months are included
+  (function(){
+    var maxM=0;
+    Object.values(data2026).forEach(function(arr){
+      for(var i=arr.length-1;i>=0;i--){if(arr[i]>0){maxM=Math.max(maxM,i+1);break;}}
+    });
+    var sub=document.getElementById('total2026-sub');
+    if(sub){
+      var mNames=['一','二','三','四','五','六','七','八','九','十','十一','十二'];
+      sub.textContent=maxM>0?'截至'+mNames[maxM-1]+'月累计':'目前累计';
+    }
+  })();
+  updMalls();
+  if(tc)tc.destroy();
+  tc=new Chart(document.getElementById('trendChart'),{type:'bar',data:{labels:MONTHS,datasets:[{label:'淘宝',data:data2025['淘宝联盟(合计)'],backgroundColor:'#C8202A',stack:'s'},{label:'京东',data:data2025['京东'],backgroundColor:'#2d7d46',stack:'s'},{label:'拼多多',data:data2025['拼多多'],backgroundColor:'#a05c00',stack:'s'},{label:'其他',data:MONTHS.map((_,i)=>Math.max(0,mTotal(data2025,i)-data2025['淘宝联盟(合计)'][i]-data2025['京东'][i]-data2025['拼多多'][i])),backgroundColor:'#c8c5bf',stack:'s'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{font:{size:10},color:'#999'},grid:{display:false}},y:{ticks:{font:{size:10},color:'#999',callback:v=>v>=10000?(v/10000).toFixed(0)+'万':v},grid:{color:'rgba(0,0,0,0.05)'}}}}});
+  const tb=Object.entries(data2025).map(([k,v])=>({k,v:v.reduce((s,x)=>s+x,0)})).sort((a,b)=>b.v-a.v);
+  if(pc)pc.destroy();
+  pc=new Chart(document.getElementById('pieChart'),{type:'doughnut',data:{labels:[...tb.slice(0,5).map(x=>x.k),'其他'],datasets:[{data:[...tb.slice(0,5).map(x=>x.v),tb.slice(5).reduce((s,x)=>s+x.v,0)],backgroundColor:['#C8202A','#2d7d46','#a05c00','#3451b2','#6b7280','#c8c5bf'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,cutout:'56%',plugins:{legend:{position:'bottom',labels:{font:{size:11},boxWidth:9,padding:8}},tooltip:{callbacks:{label:c=>c.label+': '+fmt(c.raw)}}}}});
+  // Dynamic compare: show all months where either year has data
+  (function(){
+    var maxM26=0;
+    Object.values(data2026).forEach(function(arr){for(var i=arr.length-1;i>=0;i--){if(arr[i]>0){maxM26=Math.max(maxM26,i+1);break;}}});
+    maxM26=Math.max(maxM26,3);
+    var cmpLabels=MONTHS.slice(0,maxM26);
+    if(cc)cc.destroy();
+    cc=new Chart(document.getElementById('compareChart'),{type:'bar',data:{labels:cmpLabels,datasets:[
+      {label:'2025',data:Array.from({length:maxM26},function(_,i){return mTotal(data2025,i);}),backgroundColor:'#C8202A'},
+      {label:'2026',data:Array.from({length:maxM26},function(_,i){return mTotal(data2026,i);}),backgroundColor:'#2d7d46'}
+    ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{font:{size:12}},grid:{display:false}},y:{ticks:{callback:function(v){return v>=10000?(v/10000).toFixed(0)+'万':v;},font:{size:11}},grid:{color:'rgba(0,0,0,0.05)'}}}}});
+  })();
+  buildInvSnap();
+}
+function buildInvSnap(){
+  const cm=getCM();const recs=(D.ledger||[]).filter(r=>r.month===cm);
+  const el=document.getElementById('inv-snap');if(!el)return;
+  if(!recs.length){
+    el.innerHTML='<div style="color:var(--t3);font-size:12px;padding:8px 0">本月暂无开票台账记录 · <button onclick="goInvoice()" style="background:none;border:none;color:var(--red);cursor:pointer;font-size:12px;font-family:inherit;padding:0">前往创建 →</button></div>';
+    return;
+  }
+  const done=recs.filter(r=>DONE.includes(r.status)).length;
+  let h='<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin-bottom:11px">';
+  h+=[['已完成',done,'c-green'],['待处理',recs.length-done,'c-red'],['总记录',recs.length,'']].map(function(a){
+    return '<div style="background:var(--bg);border-radius:7px;padding:8px 10px"><div style="font-size:10px;color:var(--t3);margin-bottom:3px">'+a[0]+'</div><div style="font-size:18px;font-weight:600" class="'+a[2]+'">'+a[1]+'</div></div>';
+  }).join('');
+  h+='</div><div style="display:flex;flex-direction:column;gap:5px">';
+  recs.slice(0,4).forEach(function(r){
+    var i=D.ledger.indexOf(r);
+    h+='<div style="display:flex;align-items:center;gap:10px;font-size:12px;padding:4px 0;border-bottom:1px solid var(--br);cursor:pointer" onclick="openEditLedger('+i+');goLedger()">';
+    h+='<span style="flex:1;font-weight:500">'+r.platform+'</span>';
+    h+='<span style="color:var(--t3)">'+(r.platAmt?fmt(r.platAmt):'—')+'</span>';
+    h+='<span class="badge b-'+r.status+'">'+r.status+'</span></div>';
+  });
+  if(recs.length>4){
+    h+='<div style="font-size:11px;color:var(--t3);padding-top:4px">还有 '+(recs.length-4)+' 条 · <button onclick="goLedger()" style="background:none;border:none;color:var(--red);cursor:pointer;font-size:11px;font-family:inherit;padding:0">查看全部 →</button></div>';
+  }
+  h+='</div>';
+  el.innerHTML=h;
+}
+function initSettlePlats(){if(spInit)return;Object.keys(data2025).forEach(p=>{const o=document.createElement('option');o.value=p;o.textContent=p;document.getElementById('platSel').appendChild(o);});spInit=true;}
+function renderSettle(){
+  initSettlePlats();
+  const year=document.getElementById('yearSel').value,plat=document.getElementById('platSel').value;
+  const src=year==='2025'?data2025:(window['data'+year]||data2026);
+  // Dynamically detect how many months have data
+  let mc=1;
+  Object.values(src).forEach(function(arr){
+    for(let i=arr.length-1;i>=0;i--){if(arr[i]>0){mc=Math.max(mc,i+1);break;}}
+  });
+  mc=Math.max(mc,1);
+  const ml=MONTHS.slice(0,mc);
+  const pts=plat==='all'?Object.keys(src):[plat];
+  const tots=pts.map(p=>(src[p]||Array(12).fill(0)).slice(0,mc).reduce((s,v)=>s+v,0));
+  const grand=tots.reduce((s,v)=>s+v,0);
+  let bi=0,bv=0;ml.forEach((_,i)=>{const t=pts.reduce((s,p)=>(src[p]||Array(12).fill(0))[i]+s,0);if(t>bv){bv=t;bi=i;}});
+  document.getElementById('settle-metrics').innerHTML='<div class="mc"><div class="mc-l">'+year+'年总结算</div><div class="mc-v">'+fmt(grand)+'</div><div class="mc-s">'+(plat==='all'?'所有平台':plat)+'</div></div><div class="mc"><div class="mc-l">平台数量</div><div class="mc-v">'+pts.length+'</div><div class="mc-s">已结算</div></div><div class="mc"><div class="mc-l">最高月份</div><div class="mc-v">'+(ml[bi]||'—')+'</div><div class="mc-s">'+fmt(bv)+'</div></div><div class="mc"><div class="mc-l">月均结算</div><div class="mc-v">'+fmt(grand/mc)+'</div><div class="mc-s">元/月</div></div>';
+  let h='<table><thead><tr><th>平台</th>'+ml.map(m=>'<th>'+m+'</th>').join('')+'<th>合计</th></tr></thead><tbody>';
+  // Monthly totals per column
+  const monthTots=ml.map((_,i)=>pts.reduce((s,p)=>s+(src[p]||Array(12).fill(0))[i],0));
+  pts.forEach(p=>{const row=(src[p]||Array(12).fill(0)).slice(0,mc);const rt=row.reduce((s,v)=>s+v,0);h+='<tr><td style="font-weight:500">'+p+'</td>'+row.map(v=>'<td style="color:'+(v===0?'#ccc':'inherit')+'">'+(v===0?'—':'¥'+v.toLocaleString('zh-CN',{maximumFractionDigits:0}))+'</td>').join('')+'<td style="font-weight:600;color:var(--red)">'+fmt(rt)+'</td></tr>';});
+  // Totals row
+  h+='<tr style="background:#faf9f8;border-top:2px solid var(--br)"><td style="font-weight:600">月度合计</td>'+monthTots.map(v=>'<td style="font-weight:600;color:var(--red)">'+(v>0?fmt(v):'—')+'</td>').join('')+'<td style="font-weight:700;color:var(--red)">'+fmt(grand)+'</td></tr>';
+  h+='</tbody></table>';document.getElementById('settle-table').innerHTML=h;
+  const colors=['#C8202A','#2d7d46','#a05c00','#3451b2','#6b7280','#0f6e56','#a32d2d','#d4537e','#639922','#185fa5','#3b6d11'];
+  const wh=Math.max(220,pts.length*32+60);document.getElementById('settle-chart-wrap').style.height=wh+'px';
+  if(sbc)sbc.destroy();
+  sbc=new Chart(document.getElementById('settlebar'),{type:'bar',data:{labels:pts,datasets:[{data:tots,backgroundColor:pts.map((_,i)=>colors[i%colors.length])}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>fmt(c.raw)}}},scales:{x:{ticks:{callback:v=>v>=10000?(v/10000).toFixed(0)+'万':v,font:{size:11}},grid:{color:'rgba(0,0,0,0.05)'}},y:{ticks:{font:{size:12}},grid:{display:false}}}}});
+}
+function updMalls(){
+  const ok=mallData.filter(m=>m.risk!=='高风险').length,warn=mallData.filter(m=>m.risk==='中风险').length,danger=mallData.filter(m=>m.risk==='高风险').length;
+  ['mc-ok','mc-warn','mc-danger','mc-risk','mc-total'].forEach(id=>{const e=document.getElementById(id);if(!e)return;if(id==='mc-ok')e.textContent=ok;else if(id==='mc-warn')e.textContent=warn;else if(id.includes('danger')||id==='mc-risk')e.textContent=danger;else e.textContent=mallData.length;});
+}
+function renderMalls(){
+  const q=document.getElementById('mallSearch').value.toLowerCase(),st=document.getElementById('mallStatus').value,rk=document.getElementById('mallRisk').value;
+  const f=mallData.filter(m=>{if(q&&!m.name.toLowerCase().includes(q))return false;if(st!=='all'&&m.status!==st)return false;if(rk!=='all'){if(rk==='正常'&&m.risk!=='正常')return false;if(rk==='中风险'&&m.risk!=='中风险')return false;if(rk==='高风险'&&m.risk!=='高风险')return false;}return true;});
+  const rc=r=>r==='正常'?'b-ok':r==='中风险'?'b-warn':'b-danger';
+  document.getElementById('mallBody').innerHTML=f.map(m=>{const idx=mallData.indexOf(m);return'<tr><td style="font-weight:500">'+m.name+'</td><td><span class="badge '+(m.status==='正常'?'b-ok':'b-danger')+'">'+m.status+'</span></td><td><span class="badge '+rc(m.risk)+'">'+m.risk+'</span></td><td style="color:var(--t2);font-size:12px;max-width:160px">'+m.note+'</td><td style="font-size:12px">'+m.action+'</td><td><button class="btn btn-rl btn-xs" onclick="delMall('+idx+')">移除</button></td></tr>';}).join('');
+  updMalls();
+}
+function delMall(i){if(!confirm('确定移除"'+mallData[i].name+'"？'))return;mallData.splice(i,1);saveSettle();renderMalls();toast('商城已移除');}
+function openAddMall(){['nm-name','nm-note'].forEach(id=>{const e=document.getElementById(id);if(e)e.value='';});document.getElementById('nm-action').value='保持现状';openMo('mo-mall');}
+function confirmAddMall(){const name=document.getElementById('nm-name').value.trim();if(!name){toast('请输入商城名称');return;}mallData.push({name,status:document.getElementById('nm-status').value,risk:document.getElementById('nm-risk').value,note:document.getElementById('nm-note').value||'—',action:document.getElementById('nm-action').value||'保持现状'});closeMo('mo-mall');saveSettle();renderMalls();toast('"'+name+'" 已成功引入商城列表');}
+
+function getCM(){const n=new Date();return n.getFullYear()+'年'+(n.getMonth()+1)+'月'}
+function getSelMons(){const a=[];const now=new Date();for(let i=12;i>=-1;i--){const d=new Date(now.getFullYear(),now.getMonth()-i,1);a.push(d.getFullYear()+'年'+(d.getMonth()+1)+'月');}return a;}
+function fillMon(id,val){const a=getSelMons();const v=val||getCM();if(!a.includes(v))a.unshift(v);document.getElementById(id).innerHTML=a.map(m=>'<option'+(m===v?' selected':'')+'>'+m+'</option>').join('');}
+function getMons(){const m=[...new Set((D.ledger||[]).map(r=>r.month))].sort().reverse();const cm=getCM();if(!m.includes(cm))m.unshift(cm);return m;}
+
+function renderInvDash(){
+  var cm=getCM();
+  document.getElementById('dashSub').textContent='当前月份：'+cm;
+  var recs=(D.ledger||[]).filter(function(r){return r.month===cm;});
+  var done=recs.filter(function(r){return DONE.includes(r.status);});
+  var pending=recs.filter(function(r){return !DONE.includes(r.status);});
+  var anom=recs.filter(function(r){return r.status==='异常/退回'||(r.remark&&ANOMALY.some(function(k){return r.remark.includes(k);}));});
+  var total=recs.reduce(function(s,r){return s+(parseFloat(r.platAmt)||0);},0);
+  var enabled=D.platforms.filter(function(p){return p.enabled!==false;}).length;
+
+  // Stats row
+  document.getElementById('invStats').innerHTML=
+    sc2(enabled,'应处理平台','')+
+    sc2(done.length+'/'+recs.length,'已完成/总记录','c-green')+
+    sc2(pending.length,'待处理','c-red')+
+    sc2(anom.length,'异常/逾期','c-amber')+
+    sc2('¥'+total.toLocaleString('zh-CN',{minimumFractionDigits:2,maximumFractionDigits:2}),'本月开票总额','');
+
+  // Risk section (collapsible, compact)
+  buildRisk(recs);
+
+  // Main task board - single list, each record appears exactly once
+  // Sort: anomaly → overdue → by status order
+  var statusOrder={'异常/退回':0,'未开始':1,'已取数':2,'已提交收款申请':3,'财务已开票':4,'已上传发票':5,'平台审核中':6,'已到账':7,'已归档':8,'本月无需处理':9};
+  var sorted=recs.slice().sort(function(a,b){
+    return (statusOrder[a.status]||5)-(statusOrder[b.status]||5);
+  });
+
+  var board=document.getElementById('invTaskBoard');
+  if(!recs.length){
+    board.innerHTML='<div class="inv-board"><div style="text-align:center;padding:32px;color:var(--t3);font-size:12px">本月暂无台账记录<br><button class="btn btn-p btn-sm" style="margin-top:10px" onclick="genTasks()">⚡ 生成本月任务</button></div></div>';
+    return;
+  }
+
+  var today=new Date();
+  var rows=sorted.map(function(r){
+    var idx=D.ledger.indexOf(r);
+    var amt=r.platAmt||r.amount;
+    var amtStr=amt?'¥'+parseFloat(amt).toLocaleString('zh-CN',{minimumFractionDigits:2,maximumFractionDigits:2}):'—';
+    var isDone=DONE.includes(r.status);
+    var isAnom=r.status==='异常/退回';
+    var rm=D.reminders[D.platforms.find(function(p){return p.name===r.platform;})?.id]||{};
+    var isOverdue=false;
+    if(rm.deadline&&!isDone){
+      var dl=new Date(today.getFullYear(),today.getMonth(),parseInt(rm.deadline));
+      isOverdue=dl<today;
+    }
+    var rowCls='inv-row'+(isAnom?' anomaly':isOverdue?' overdue':'');
+    var metaParts=[];
+    if(r.settleMonth)metaParts.push('结算'+r.settleMonth);
+    if(r.entity)metaParts.push(r.entity);
+    if(rm.deadline&&!isDone)metaParts.push((isOverdue?'⚠️ 已逾期':'截止每月'+rm.deadline+'号'));
+    if(r.invoiceNo)metaParts.push('发票:'+r.invoiceNo);
+    var nextStep=NEXTSTEP[r.status]||'';
+    return '<div class="'+rowCls+'" onclick="openEditLedger('+idx+')">'
+      +'<div class="inv-plat">'+r.platform+'</div>'
+      +'<div class="inv-status-wrap"><span class="badge b-'+r.status+'">'+r.status+'</span></div>'
+      +'<div class="inv-meta"><div class="inv-meta-row">'
+        +(metaParts.length?metaParts.join(' · '):'<span style="color:var(--t3)">待补充信息</span>')
+      +'</div>'
+      +(nextStep&&!isDone?'<div style="margin-top:2px;color:var(--blue);font-size:11px">→ '+nextStep+'</div>':'')
+      +'</div>'
+      +'<div class="inv-amt" style="color:'+(isDone?'var(--green)':amt?'var(--tx)':'var(--t3)')+'">'+amtStr+'</div>'
+      +'<div style="font-size:11px;color:var(--t3);flex-shrink:0">编辑 →</div>'
+      +'</div>';
+  }).join('');
+
+  board.innerHTML='<div class="inv-board">'
+    +'<div class="inv-board-hd">'
+    +'<span class="inv-board-title">本月任务进度</span>'
+    +'<span class="inv-board-meta">'+done.length+' / '+recs.length+' 已完成'+(pending.length?' · '+pending.length+' 待处理':'')+'</span>'
+    +'</div>'
+    +rows
+    +'</div>';
+}
+
+function sc2(v,l,c){return'<div class="sc"><div class="sc-l">'+l+'</div><div class="sc-v'+(c?' '+c:'')+'">'+ v+'</div></div>';}
+function es(ico,msg){return'<div class="es"><div style="font-size:1.4rem;margin-bottom:6px">'+ico+'</div>'+msg+'</div>';}
+
+function buildRisk(recs){
+  var risks=[];
+  recs.forEach(function(r){
+    if(r.status==='异常/退回')risks.push({t:'异常/退回',c:'rt-od',d:r.platform+'：已标记异常',i:D.ledger.indexOf(r)});
+    var rm=D.reminders[D.platforms.find(function(p){return p.name===r.platform;})?.id];
+    if(rm&&rm.deadline&&!DONE.includes(r.status)){
+      var today=new Date();
+      var dl=new Date(today.getFullYear(),today.getMonth(),parseInt(rm.deadline));
+      if(dl<today)risks.push({t:'已逾期',c:'rt-od',d:r.platform+' 截止日已过（每月'+rm.deadline+'号）',i:D.ledger.indexOf(r)});
+    }
+    if(!r.platAmt&&!r.amount&&!DONE.includes(r.status))risks.push({t:'金额为空',c:'rt-mi',d:r.platform+' 开票金额未填写',i:D.ledger.indexOf(r)});
+    if(r.status==='财务已开票'&&!r.invoiceNo)risks.push({t:'发票号为空',c:'rt-mi',d:r.platform+' 财务已开票但未填发票号',i:D.ledger.indexOf(r)});
+    if(r.remark&&ANOMALY.some(function(k){return r.remark.includes(k);}))risks.push({t:'备注异常',c:'rt-wa',d:r.platform+' 备注含异常关键词',i:D.ledger.indexOf(r)});
+  });
+  var sec=document.getElementById('riskSec');
+  if(!risks.length){sec.innerHTML='';return;}
+
+  // Compact collapsible risk section
+  var id='risk-body-'+Date.now();
+  sec.innerHTML='<div class="risk-collapse">'
+    +'<div class="risk-collapse-hd">'
+    +'<button class="risk-badge risk-badge-red" onclick="var b=document.getElementById(\''+id+'\');b.classList.toggle(\'open\')">⚠️ '+risks.length+' 项风险需关注 ▾</button>'
+    +'<span style="font-size:11px;color:var(--t3)">点击展开查看</span>'
+    +'</div>'
+    +'<div class="risk-collapse-body" id="'+id+'">'
+    +'<div class="risk-sec" style="margin-bottom:0">'
+    +'<div class="risk-list">'+risks.map(function(r){
+      return '<div class="ri" onclick="openEditLedger('+r.i+')">'
+        +'<span class="rt '+r.c+'">'+r.t+'</span>'
+        +'<span style="flex:1">'+r.d+'</span>'
+        +'<span style="color:var(--t3);font-size:11px">处理 →</span></div>';
+    }).join('')+'</div></div></div></div>';
+}
+function genTasks(){
+  const cm=getCM();const en=D.platforms.filter(p=>p.enabled!==false);
+  const ex=new Set((D.ledger||[]).filter(r=>r.month===cm).map(r=>r.platform));
+  const toC=en.filter(p=>!ex.has(p.name));
+  if(!toC.length){toast('本月所有启用平台均已有记录');return;}
+  if(!confirm('将为'+toC.length+'个平台自动生成'+cm+'记录，确认？\n\n'+toC.map(p=>p.name).join('、')))return;
+  toC.forEach(p=>{D.ledger.push({month:cm,platform:p.name,entity:'',status:'未开始',platAmt:'',realAmt:'',amount:'',settleMonth:'',invoiceNo:'',remark:'',attachments:[],updatedAt:new Date().toISOString()});});
+  addLog('一键生成本月任务：'+cm+'，新建'+toC.length+'条','ledger');save();toast('✓ 已生成'+toC.length+'条本月记录');renderByPage();
+}
+function renderLedger(){
+  const mons=getMons();const sel=document.getElementById('ledgerMon');const cur=sel.value||getCM();
+  sel.innerHTML=mons.map(m=>'<option'+(m===cur?' selected':'')+'>'+m+'</option>').join('');
+  const mon=sel.value;let rows=(D.ledger||[]).filter(r=>r.month===mon);
+  const tot=rows.reduce((s,r)=>s+(parseFloat(r.platAmt)||parseFloat(r.amount)||0),0);
+  const done=rows.filter(r=>DONE.includes(r.status)).length,anom=rows.filter(r=>r.status==='异常/退回').length;
+  document.getElementById('ledgerStats').innerHTML=sc2(rows.length,'本月记录','')+sc2(done,'已完成','c-green')+sc2(rows.length-done-anom,'待处理','c-red')+sc2(anom,'异常','c-amber')+sc2('¥'+tot.toLocaleString('zh-CN',{minimumFractionDigits:2,maximumFractionDigits:2}),'开票总额','');
+  (function(){
+    var fb=document.getElementById('filterBar');fb.innerHTML='';
+    ['全部',...STATUSES].forEach(function(s){
+      var b=document.createElement('button');
+      b.className='fc'+(s===ledgFilter?' active':'');
+      b.textContent=s;
+      b.onclick=function(){setFilter(s);};
+      fb.appendChild(b);
+    });
+  })();
+  if(ledgFilter!=='全部')rows=rows.filter(r=>r.status===ledgFilter);
+  const tb=document.getElementById('ledgerBody');
+  if(!rows.length){tb.innerHTML='<tr><td colspan="10" style="text-align:center;padding:18px;color:var(--t3)">暂无记录</td></tr>';return;}
+  tb.innerHTML=rows.map(r=>{
+    const i=D.ledger.indexOf(r);
+    const pa=r.platAmt?parseFloat(r.platAmt):null,ra=r.realAmt?parseFloat(r.realAmt):(r.amount?parseFloat(r.amount):null);
+    const diff=pa!==null&&ra!==null?ra-pa:null;
+    const ds=diff===null?'—':(Math.abs(diff)<0.01?'<span style="color:var(--green);font-weight:500">✓</span>':'<span style="color:var(--red);font-weight:500">'+(diff>0?'+':'')+diff.toFixed(2)+'</span>');
+    const p2=pa!==null?'¥'+pa.toLocaleString('zh-CN',{minimumFractionDigits:2,maximumFractionDigits:2}):'—';
+    const r2=ra!==null?'¥'+ra.toLocaleString('zh-CN',{minimumFractionDigits:2,maximumFractionDigits:2}):'—';
+    return'<tr><td><strong>'+r.platform+'</strong></td><td style="color:var(--t3)">'+(r.settleMonth||'—')+'</td><td style="font-variant-numeric:tabular-nums;font-weight:500">'+p2+'</td><td style="font-variant-numeric:tabular-nums;font-weight:500">'+r2+'</td><td>'+ds+'</td><td style="color:var(--t3)">'+(r.entity||'—')+'</td><td style="color:var(--t3)">'+(r.invoiceNo||'—')+'</td><td><span class="badge b-'+r.status+'">'+r.status+'</span></td><td style="max-width:90px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--t3)" title="'+(r.remark||'')+'">'+(r.remark||'—')+'</td><td style="display:flex;gap:4px"><button class="btn btn-g btn-xs" onclick="openEditLedger('+i+')">编辑</button><button class="btn btn-rl btn-xs" onclick="delLedger('+i+')">删</button></td></tr>';
+  }).join('');
+}
+function setFilter(f){ledgFilter=f;renderLedger();}
+function openAddLedger(){
+  editIdx=null;document.getElementById('lm-title').textContent='新建开票记录';
+  fillMon('lm-mon',getCM());
+  ['lm-settle','lm-pamt','lm-ramt','lm-entity','lm-inv','lm-remark'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('lm-diff').textContent='—';document.getElementById('lm-diff').style.color='';
+  document.getElementById('lm-status').value='未开始';
+  document.getElementById('lm-plat').innerHTML=D.platforms.map(p=>'<option>'+p.name+'</option>').join('');
+  openMo('mo-ledger');
+}
+function openEditLedger(idx){
+  editIdx=idx;const r=D.ledger[idx];document.getElementById('lm-title').textContent='编辑开票记录';
+  fillMon('lm-mon',r.month||getCM());
+  document.getElementById('lm-plat').innerHTML=D.platforms.map(p=>'<option'+(p.name===r.platform?' selected':'')+'>'+p.name+'</option>').join('');
+  document.getElementById('lm-settle').value=r.settleMonth||'';
+  document.getElementById('lm-pamt').value=r.platAmt||'';
+  document.getElementById('lm-ramt').value=r.realAmt||r.amount||'';
+  document.getElementById('lm-entity').value=r.entity||'';
+  document.getElementById('lm-inv').value=r.invoiceNo||'';
+  document.getElementById('lm-remark').value=r.remark||'';
+  document.getElementById('lm-status').value=r.status||'未开始';
+  calcDiff();openMo('mo-ledger');
+}
+function autofillEntity(){
+  const pn=document.getElementById('lm-plat').value,pl=D.platforms.find(p=>p.name===pn);if(!pl)return;
+  const b=(pl.inv||[])[0]?.blocks?.[0];
+  if(b&&b.title&&!['新开票主体','开票主体'].includes(b.title))document.getElementById('lm-entity').value=b.title;
+}
+function calcDiff(){
+  const pa=parseFloat(document.getElementById('lm-pamt').value)||0,ra=parseFloat(document.getElementById('lm-ramt').value)||0;
+  const el=document.getElementById('lm-diff');
+  if(!pa&&!ra){el.textContent='—';el.style.color='';return;}
+  const d=ra-pa;el.style.fontWeight='500';
+  if(Math.abs(d)<0.01){el.textContent='✓ 一致';el.style.color='var(--green)';}
+  else{el.textContent=(d>0?'+':'')+d.toFixed(2)+' 元';el.style.color='var(--red)';}
+}
+function saveLedger(){
+  const month=document.getElementById('lm-mon').value.trim(),platform=document.getElementById('lm-plat').value;
+  if(!month||!platform){toast('请填写月份和平台');return;}
+  const rec={month,platform,settleMonth:document.getElementById('lm-settle').value.trim(),platAmt:document.getElementById('lm-pamt').value,realAmt:document.getElementById('lm-ramt').value,amount:document.getElementById('lm-ramt').value,entity:document.getElementById('lm-entity').value.trim(),invoiceNo:document.getElementById('lm-inv').value.trim(),status:document.getElementById('lm-status').value,remark:document.getElementById('lm-remark').value.trim(),attachments:[],updatedAt:new Date().toISOString()};
+  const isNew=editIdx===null;
+  if(isNew){D.ledger.push(rec);addLog('新建台账：'+platform+' '+month,'ledger');}
+  else{D.ledger[editIdx]=rec;addLog('更新台账：'+platform+' '+month+' → '+rec.status,'ledger');}
+  save();closeMo('mo-ledger');toast(isNew?'✓ 记录已创建':'✓ 记录已更新');renderByPage();
+}
+function delLedger(i){if(!confirm('确定删除？'))return;addLog('删除台账：'+D.ledger[i].platform+' '+D.ledger[i].month,'ledger');D.ledger.splice(i,1);save();toast('已删除');renderLedger();}
+function exportLedger(){
+  const mon=document.getElementById('ledgerMon').value,rows=(D.ledger||[]).filter(r=>r.month===mon);
+  const hdr=['月份','平台','结算月份','平台结算金额','实际开票金额','开票主体','发票号码','状态','备注'];
+  const csv=[hdr,...rows.map(r=>[r.month,r.platform,r.settleMonth,r.platAmt,r.realAmt||r.amount,r.entity,r.invoiceNo,r.status,r.remark])].map(row=>row.map(c=>'"'+(c||'')+'"').join(',')).join('\n');
+  try{const a=document.createElement('a');a.href='data:text/csv;charset=utf-8,'+encodeURIComponent('\uFEFF'+csv);a.download='开票台账_'+mon+'.csv';a.click();toast('✓ 已导出');}catch(e){}
+}
+function renderSummary(){
+  const mons=getMons();const sel=document.getElementById('sumMon');const cur=sel.value||getCM();
+  sel.innerHTML=mons.map(m=>'<option'+(m===cur?' selected':'')+'>'+m+'</option>').join('');
+  const month=sel.value,rows=(D.ledger||[]).filter(r=>r.month===month);
+  const total=rows.reduce((s,r)=>s+(parseFloat(r.platAmt||r.amount)||0),0);
+  const done=rows.filter(r=>DONE.includes(r.status)),inp=rows.filter(r=>!DONE.includes(r.status)&&r.status!=='异常/退回'),anom=rows.filter(r=>r.status==='异常/退回'||(r.remark&&ANOMALY.some(k=>r.remark.includes(k))));
+  document.getElementById('sumContent').innerHTML='<div class="sum-box"><div class="sum-title">📊 '+month+' 开票汇总报告</div><div class="sum-stats"><div class="ss"><div class="ss-v">'+D.platforms.filter(p=>p.enabled!==false).length+'</div><div class="ss-l">应处理平台</div></div><div class="ss"><div class="ss-v" style="color:var(--green)">'+done.length+'</div><div class="ss-l">已完成</div></div><div class="ss"><div class="ss-v" style="color:var(--blue)">'+inp.length+'</div><div class="ss-l">进行中</div></div><div class="ss"><div class="ss-v" style="color:var(--red)">'+anom.length+'</div><div class="ss-l">异常/逾期</div></div><div class="ss"><div class="ss-v" style="font-size:.9rem">¥'+total.toLocaleString('zh-CN',{minimumFractionDigits:2,maximumFractionDigits:2})+'</div><div class="ss-l">开票总金额</div></div></div><div class="sg"><div class="sg-t" style="color:var(--green)">✅ 一、已完成平台（'+done.length+'个）</div>'+(done.length?done.map((r,i)=>'<div style="font-size:12px;padding:3px 0">'+(i+1)+'. '+r.platform+'：'+(r.platAmt||r.amount?'¥'+(parseFloat(r.platAmt||r.amount)).toLocaleString('zh-CN',{minimumFractionDigits:2,maximumFractionDigits:2}):'金额待填')+'，'+r.status+'</div>').join(''):'<div style="font-size:11px;color:var(--t3);padding:3px 0">暂无</div>')+'</div><div class="sg"><div class="sg-t" style="color:var(--blue)">🔄 二、进行中平台（'+inp.length+'个）</div>'+(inp.length?inp.map((r,i)=>'<div style="font-size:12px;padding:3px 0">'+(i+1)+'. '+r.platform+'：'+r.status+'，下一步：'+(NEXTSTEP[r.status]||'继续推进')+'</div>').join(''):'<div style="font-size:11px;color:var(--t3);padding:3px 0">暂无</div>')+'</div>'+(anom.length?'<div class="sg"><div class="sg-t" style="color:var(--red)">⚠️ 三、异常说明（'+anom.length+'项）</div>'+anom.map((r,i)=>'<div style="font-size:12px;padding:3px 0">'+(i+1)+'. '+r.platform+'：'+(r.remark||'状态异常/退回')+'</div>').join('')+'</div>':'')+'<div class="sg"><div class="sg-t">📋 下步计划</div><div style="font-size:12px;color:var(--t3);padding:3px 0">'+(inp.length?'本期需跟进：'+inp.map(r=>r.platform).join('、')+'的后续处理。':'所有平台均已处理完成。')+(anom.length?' 同时需处理'+anom.map(r=>r.platform).join('、')+'的异常情况。':'')+'</div></div></div>';
+}
+function copySummary(){
+  const mon=document.getElementById('sumMon').value,rows=(D.ledger||[]).filter(r=>r.month===mon);
+  const total=rows.reduce((s,r)=>s+(parseFloat(r.platAmt||r.amount)||0),0);
+  const done=rows.filter(r=>DONE.includes(r.status)),inp=rows.filter(r=>!DONE.includes(r.status)&&r.status!=='异常/退回'),anom=rows.filter(r=>r.status==='异常/退回'||(r.remark&&ANOMALY.some(k=>r.remark.includes(k))));
+  let t='【联盟开票月度汇总｜'+mon+'】\n本月应处理平台：'+D.platforms.filter(p=>p.enabled!==false).length+'个\n已完成：'+done.length+'个  进行中：'+inp.length+'个  异常：'+anom.length+'个\n本月开票总金额：¥'+total.toLocaleString('zh-CN',{minimumFractionDigits:2,maximumFractionDigits:2})+'\n\n';
+  if(done.length){t+='一、已完成平台\n';done.forEach((r,i)=>{t+=(i+1)+'. '+r.platform+'：¥'+(parseFloat(r.platAmt||r.amount)||0).toLocaleString('zh-CN',{minimumFractionDigits:2,maximumFractionDigits:2})+'，'+r.status+'\n';});}
+  if(inp.length){t+='\n二、进行中平台\n';inp.forEach((r,i)=>{t+=(i+1)+'. '+r.platform+'：'+r.status+'，下一步：'+(NEXTSTEP[r.status]||'继续推进')+'\n';});}
+  if(anom.length){t+='\n三、异常说明\n';anom.forEach((r,i)=>{t+=(i+1)+'. '+r.platform+'：'+(r.remark||'异常/退回')+'\n';});}
+  navigator.clipboard.writeText(t).then(()=>toast('✓ 已复制到剪贴板')).catch(()=>toast('复制失败'));
+}
+function copySummaryNow(){const sel=document.getElementById('sumMon');if(sel)sel.value=getCM();copySummary();}
+function exportSummary(){
+  const mon=document.getElementById('sumMon').value,rows=(D.ledger||[]).filter(r=>r.month===mon);
+  const hdr=['月份','平台','开票金额','开票主体','发票号码','状态'];
+  const csv=[hdr,...rows.map(r=>[r.month,r.platform,r.platAmt||r.amount,r.entity,r.invoiceNo,r.status])].map(row=>row.map(c=>'"'+(c||'')+'"').join(',')).join('\n');
+  try{const a=document.createElement('a');a.href='data:text/csv;charset=utf-8,'+encodeURIComponent('\uFEFF'+csv);a.download='月度汇总_'+mon+'.csv';a.click();toast('✓ 已导出');}catch(e){}
+}
+function renderPlatList(){
+  var mons=getMons();var sel=document.getElementById('platLibMon');var cur=sel.value||getCM();
+  sel.innerHTML=mons.map(function(m){return'<option'+(m===cur?' selected':'')+'>'+m+'</option>';}).join('');
+  var mon=sel.value;
+  var grid=document.getElementById('platGrid');
+  grid.innerHTML='';
+  D.platforms.forEach(function(p){
+    var rec=(D.ledger||[]).find(function(r){return r.platform===p.name&&r.month===mon;});
+    var rm=D.reminders[p.id]||{};
+    var status=rec?rec.status:'无台账';
+    var amt=rec?(rec.platAmt||rec.amount):'';
+    var amtS=amt?'¥'+parseFloat(amt).toLocaleString('zh-CN',{minimumFractionDigits:2,maximumFractionDigits:2}):'—';
+    var pct=rec?PROGRESS[rec.status]||0:0;
+    var isDone=rec&&DONE.includes(rec.status);
+    var isAnom=rec&&rec.status==='异常/退回';
+    var dlH='';
+    if(rm.deadline){
+      var today=new Date();
+      var dl=new Date(today.getFullYear(),today.getMonth(),parseInt(rm.deadline));
+      if(dl<today)dl.setMonth(dl.getMonth()+1);
+      var days=Math.ceil((dl-today)/86400000);
+      var dc=days<=3?'dp-d':days<=7?'dp-w':'dp-ok';
+      dlH='<span class="dp '+dc+'">'+(days<=0?'已逾期':days+'天后截止')+'</span>';
+    }
+    var bc=isDone?'var(--green)':isAnom?'var(--red)':p.color;
+    var statusHtml=rec?'<span class="badge b-'+status+'">'+status+'</span>':'<span style="font-size:11px;color:var(--t3)">本月无记录</span>';
+    var div=document.createElement('div');
+    div.className='pcard'+(p.enabled===false?' dis':'');
+    div.innerHTML='<div class="pcard-bar" style="background:'+p.color+'"></div>'
+      +'<div class="pcard-body"><div class="pcard-ico">'+p.icon+'</div>'
+      +'<div class="pcard-name">'+p.name+'</div>'
+      +'<div class="pcard-desc">'+(p.desc||'暂无简介')+'</div>'
+      +'<div class="pcard-prog"><div class="pcard-bar2" style="width:'+pct+'%;background:'+bc+'"></div></div>'
+      +'<div class="pcard-ft"><div>'+statusHtml+'</div>'
+      +'<div style="display:flex;align-items:center;gap:5px">'+dlH
+      +'<span style="font-size:12px;font-weight:500;color:'+(amt?'var(--tx)':'var(--t3)')+'">'+amtS+'</span></div></div></div>';
+    div.onclick=function(){goPlat(p.id);};
+    grid.appendChild(div);
+  });
+}
+function P(){return D.platforms.find(x=>x.id===curPlatId);}
+function renderPlatform(){
+  var p=P();if(!p)return;
+  var em=editMode;
+  var ce=em?'contenteditable="true"':'';
+  var ceb=em?'contenteditable="true" style="display:block"':'';
+  document.getElementById('editBar').textContent=em?'✏️ 编辑模式已开启 · 点击任意文字可修改':'👁 查看模式 · 点击右上角「编辑」可修改内容';
+  var pg=document.getElementById('page-platform');
+  em?pg.classList.add('em'):pg.classList.remove('em');
+  var cm=getCM();
+  var rec=(D.ledger||[]).find(function(r){return r.platform===p.name&&r.month===cm;});
+  var recIdx=rec?D.ledger.indexOf(rec):-1;
+
+  // Build status card using DOM to avoid quote nesting
+  var scDiv=document.createElement('div');
+  if(rec){
+    scDiv.className='psc';
+    var amtVal=rec.platAmt||rec.amount;
+    var amtStr=amtVal?'¥'+parseFloat(amtVal).toLocaleString('zh-CN',{minimumFractionDigits:2,maximumFractionDigits:2}):'未填写';
+    scDiv.innerHTML=
+      '<div class="psc-item"><span class="psc-l">本月状态</span><span class="psc-v"><span class="badge b-'+rec.status+'">'+rec.status+'</span></span></div>'
+      +'<div class="psc-item"><span class="psc-l">结算月份</span><span class="psc-v">'+(rec.settleMonth||'—')+'</span></div>'
+      +'<div class="psc-item"><span class="psc-l">开票金额</span><span class="psc-v">'+amtStr+'</span></div>'
+      +'<div class="psc-item"><span class="psc-l">下一步</span><span class="psc-v">'+(NEXTSTEP[rec.status]||'继续推进')+'</span></div>'
+      +'<div style="margin-left:auto;display:flex;gap:6px">'
+      +'<button class="btn btn-p btn-sm" id="edit-rec-btn">编辑本月记录</button>'
+      +'<button class="btn btn-g btn-sm" onclick="goLedger()">台账</button></div>';
+    setTimeout(function(){
+      var btn=document.getElementById('edit-rec-btn');
+      if(btn)btn.onclick=function(){openEditLedger(recIdx);};
+    },0);
+  } else {
+    scDiv.className='psc-nr';
+    scDiv.innerHTML='<span>📋 '+cm+'暂无台账记录</span>';
+    var addBtn=document.createElement('button');
+    addBtn.className='btn btn-p btn-sm';
+    addBtn.textContent='＋ 新建本月记录';
+    addBtn.onclick=function(){openAddLedgerForPlat(p.name);};
+    scDiv.appendChild(addBtn);
+  }
+
+  // Build info cards
+  var icHtml=p.cards.map(function(card,i){
+    return '<div class="ic"><button class="rm-ic" onclick="rmc('+i+')">✕</button>'
+      +'<div class="ic-l" '+ce+' data-c="'+i+'" data-s="label">'+card.label+'</div>'
+      +'<div class="ic-v" style="'+(card.h?'color:'+p.color:'')+'" '+ce+' data-c="'+i+'" data-s="value">'+card.value+'</div></div>';
+  }).join('');
+  icHtml+='<button class="da-ic" onclick="adc()">＋ 信息卡</button>';
+
+  var notesHtml=(p.notes||[]).map(function(n,i){return '<div class="nb" '+ceb+' data-note="'+i+'">'+n+'</div>';}).join('');
+  var warnsHtml=(p.warnings||[]).map(function(w,i){return '<div class="wb" '+ceb+' data-warn="'+i+'">'+w+'</div>';}).join('');
+
+  // Accounts
+  var acctHtml='';
+  if(p.accounts&&p.accounts.length){
+    acctHtml='<div class="sl">登录信息</div><div class="ag">';
+    p.accounts.forEach(function(a,ai){
+      acctHtml+='<div class="acard"><div class="at" '+ce+' data-a="'+ai+'" data-s="title">'+a.title+'</div>';
+      a.rows.forEach(function(row,ri){
+        var isPwd=row[0].includes('密码');
+        var vid='av'+ai+'_'+ri;
+        var encVal=ev(row[1]);
+        acctHtml+='<div class="ar"><span class="lbl" '+ce+' data-a="'+ai+'" data-r="'+ri+'" data-s="0">'+row[0]+'</span>'
+          +'<span class="val"><span id="'+vid+'">'+(isPwd?'••••••••':row[1])+'</span>'
+          +(isPwd?'<button class="pwb" data-vid="'+vid+'" data-enc="'+encVal+'" onclick="var el=document.getElementById(this.dataset.vid);el.textContent=el.textContent.includes(\'•\')?decodeURIComponent(this.dataset.enc):\'••••••••\'">👁</button>':'')
+          +'<button class="cb" data-enc="'+encVal+'" onclick="cv(this.dataset.enc)">复制</button>'
+          +'</span></div>';
+      });
+      acctHtml+='</div>';
+    });
+    acctHtml+='</div>';
+  }
+
+  // Steps
+  var stepsHtml='<div class="sl">操作步骤</div><div class="steps">';
+  p.steps.forEach(function(s,i){
+    stepsHtml+='<div class="step"><div class="sn" style="color:'+p.color+';border:1px solid '+p.color+'44;background:'+p.color+'11">'+(i+1)+'</div>'
+      +'<div class="sbody"><div class="stitle" '+ce+' data-step="'+i+'" data-s="title">'+s.title+'</div>'
+      +'<div class="sdesc" '+ceb+' data-step="'+i+'" data-s="desc">'+s.desc+'</div>'
+      +(s.link?'<a class="slink" href="'+s.link+'" target="_blank" style="background:'+p.color+'11;border:1px solid '+p.color+'33;color:'+p.color+'">🔗 '+s.link+'</a>':'')
+      +(em?'<button class="rm-s" onclick="rms('+i+')">✕ 删除</button>':'')
+      +'</div></div>';
+  });
+  stepsHtml+='</div>'+(em?'<button class="add-s" onclick="ads()">＋ 添加步骤</button>':'');
+
+  // Invoice blocks
+  var invHtml='';
+  (p.inv||[]).forEach(function(sec,si){
+    invHtml+='<div class="sl">'+sec.title+'</div>';
+    if(sec.note)invHtml+='<div class="nb" style="margin-bottom:7px" '+ceb+' data-sn="'+si+'">'+sec.note+'</div>';
+    if(em)invHtml+='<button class="add-ib" onclick="aib('+si+')">＋ 添加开票信息块</button>';
+    sec.blocks.forEach(function(b,bi){
+      invHtml+='<div class="ib">'+(em?'<button class="rm-blk" onclick="rib('+si+','+bi+')">✕ 删除</button>':'')
+        +'<div class="ib-t" '+ce+' data-si="'+si+'" data-bi="'+bi+'" data-s="title">'+b.title+'</div>'
+        +'<table class="itbl">';
+      b.rows.forEach(function(row,ri){
+        var isKey=row[0].includes('税号')||row[0].includes('账号')||row[0].includes('银行');
+        var encVal=ev(row[1]);
+        invHtml+='<tr><td '+ce+' data-si="'+si+'" data-bi="'+bi+'" data-ri="'+ri+'" data-s="0">'+row[0]+'</td>'
+          +'<td '+ce+' data-si="'+si+'" data-bi="'+bi+'" data-ri="'+ri+'" data-s="1">'+row[1]
+          +(!em&&isKey?'<button class="cb" data-enc="'+encVal+'" onclick="cv(this.dataset.enc)">复制</button>':'')
+          +(em?'<button class="rm-r" onclick="rrr('+si+','+bi+','+ri+')">✕</button>':'')
+          +'</td></tr>';
+      });
+      invHtml+='</table>'+(em?'<button class="add-r" onclick="air('+si+','+bi+')">＋ 添加行</button>':'')+'</div>';
+    });
+  });
+
+  // Assemble - use platCt container
+  var ct=document.getElementById('platCt');
+  // Build header
+  var hdrHtml='<div class="plat-hd"><div class="plat-ico" style="background:'+p.color+'22">'+p.icon+'</div>'
+    +'<div class="plat-txt"><h2 '+ce+' data-f="name">'+p.name+'</h2><p '+ce+' data-f="desc">'+p.desc+'</p></div>'
+    +(!em?'<div style="margin-left:auto;display:flex;gap:6px;padding-top:2px"><button class="btn btn-p btn-sm" id="add-ledger-hdr-btn">＋ 新建台账</button></div>':'')
+    +'</div>';
+
+  ct.innerHTML=hdrHtml+'<div id="psc-container"></div>'
+    +'<div class="ig">'+icHtml+'</div>'
+    +notesHtml+warnsHtml+acctHtml+stepsHtml+invHtml;
+
+  document.getElementById('psc-container').appendChild(scDiv);
+
+  if(!em){
+    var addHdrBtn=document.getElementById('add-ledger-hdr-btn');
+    if(addHdrBtn)addHdrBtn.onclick=function(){openAddLedgerForPlat(p.name);};
+  }
+}
+function openAddLedgerForPlat(name){openAddLedger();setTimeout(()=>{const s=document.getElementById('lm-plat');for(let i=0;i<s.options.length;i++)if(s.options[i].value===name){s.selectedIndex=i;autofillEntity();break;}},50);}
+function collectEdits(){
+  const p=P();if(!p)return;
+  const m=document.getElementById('platCt'),g=el=>el.innerText.trim();
+  const n=m.querySelector('[data-f="name"]'),d=m.querySelector('[data-f="desc"]');
+  if(n)p.name=g(n);if(d)p.desc=g(d);
+  m.querySelectorAll('[data-c]').forEach(el=>{const i=+el.dataset.c;if(p.cards[i])p.cards[i][el.dataset.s]=g(el);});
+  m.querySelectorAll('[data-step]').forEach(el=>{const i=+el.dataset.step,s=el.dataset.s;if(s&&p.steps[i])p.steps[i][s]=g(el);});
+  m.querySelectorAll('[data-note]').forEach(el=>{const i=+el.dataset.note;if(p.notes?.[i]!=null)p.notes[i]=g(el);});
+  m.querySelectorAll('[data-warn]').forEach(el=>{const i=+el.dataset.warn;if(p.warnings?.[i]!=null)p.warnings[i]=g(el);});
+  m.querySelectorAll('[data-a]').forEach(el=>{const ai=+el.dataset.a;if(!p.accounts[ai])return;if(el.dataset.s==='title'){p.accounts[ai].title=g(el);return;}const ri=+el.dataset.r;if(p.accounts[ai].rows[ri])p.accounts[ai].rows[ri][+el.dataset.s]=g(el);});
+  m.querySelectorAll('[data-si][data-bi]').forEach(el=>{const si=+el.dataset.si,bi=+el.dataset.bi;if(!p.inv[si]?.blocks[bi])return;if(el.dataset.s==='title'){p.inv[si].blocks[bi].title=g(el);return;}const ri=+el.dataset.ri;if(p.inv[si].blocks[bi].rows[ri])p.inv[si].blocks[bi].rows[ri][+el.dataset.s]=g(el);});
+  m.querySelectorAll('[data-sn]').forEach(el=>{const si=+el.dataset.sn;if(p.inv[si])p.inv[si].note=g(el);});
+  renderNav();
+}
+function toggleEdit(){
+  if(editMode){collectEdits();editMode=false;}else editMode=true;
+  document.getElementById('etb').textContent=editMode?'👁 退出编辑':'✏️ 编辑';
+  document.getElementById('svb').style.display=editMode?'':'none';
+  document.getElementById('dpb').style.display=editMode?'':'none';
+  renderPlatform();
+}
+function adc(){P().cards.push({label:'标签',value:'内容'});renderPlatform();}
+function rmc(i){P().cards.splice(i,1);renderPlatform();}
+function ads(){collectEdits();P().steps.push({title:'新步骤',desc:'请填写操作说明'});renderPlatform();}
+function rms(i){collectEdits();P().steps.splice(i,1);renderPlatform();}
+function aib(si){collectEdits();P().inv[si].blocks.push({title:'新开票主体',rows:[['字段','内容']]});renderPlatform();}
+function rib(si,bi){collectEdits();P().inv[si].blocks.splice(bi,1);renderPlatform();}
+function air(si,bi){collectEdits();P().inv[si].blocks[bi].rows.push(['字段','内容']);renderPlatform();}
+function rrr(si,bi,ri){collectEdits();P().inv[si].blocks[bi].rows.splice(ri,1);renderPlatform();}
+function deletePlat(){const p=P();if(!confirm('确定要删除「'+(p?.name)+'」吗？'))return;addLog('删除平台：'+p.name,'platform');D.platforms=D.platforms.filter(x=>x.id!==curPlatId);save();go('platforms',document.getElementById('N-platforms'));}
+
+function renderLib(q){
+  var blocks=[];
+  D.platforms.forEach(function(p){
+    (p.inv||[]).forEach(function(sec){
+      sec.blocks.forEach(function(b){
+        if(!q||JSON.stringify(b).toLowerCase().includes(q.toLowerCase())||p.name.toLowerCase().includes(q.toLowerCase()))
+          blocks.push({pn:p.name,pc:p.color,block:b});
+      });
+    });
+  });
+  var grid=document.getElementById('libGrid');
+  if(!blocks.length){grid.innerHTML='<div style="color:var(--t3);padding:20px;font-size:12px">暂无开票信息</div>';return;}
+  grid.innerHTML='';
+  blocks.forEach(function(item){
+    var pn=item.pn,pc=item.pc,block=item.block;
+    var div=document.createElement('div');
+    div.className='lcard';
+    var rowsHtml=block.rows.map(function(r){
+      var encVal=ev(r[1]);
+      return '<div class="lr"><span class="k">'+r[0]+'</span>'
+        +'<span class="v">'+r[1]+'<button class="cb" data-enc="'+encVal+'" onclick="cv(this.dataset.enc)">复制</button></span></div>';
+    }).join('');
+    div.innerHTML='<div class="lhd"><div><div class="ln">'+block.title+'</div><div class="lp">关联：'+pn+'</div></div>'
+      +'<span style="font-size:10px;padding:1px 6px;border-radius:3px;border:1px solid '+pc+'33;color:'+pc+'">'+pn+'</span></div>'
+      +rowsHtml;
+    grid.appendChild(div);
+  });
+}
+function renderReminders(){
+  var today=new Date();
+  var grid=document.getElementById('rmGrid');
+  grid.innerHTML='';
+  D.platforms.forEach(function(p){
+    var rm=D.reminders[p.id]||{};
+    var en=rm.enabled!==false;
+    var dl=null;
+    if(rm.deadline){
+      var d=new Date(today.getFullYear(),today.getMonth(),parseInt(rm.deadline));
+      if(d<today)d.setMonth(d.getMonth()+1);
+      dl=Math.ceil((d-today)/86400000);
+    }
+    var dc=dl===null?'':dl<=3?'dp-d':dl<=7?'dp-w':'dp-ok';
+    var dt=dl===null?'未配置':dl<=0?'已过期':dl+'天后';
+    var rec=(D.ledger||[]).find(function(r){return r.platform===p.name&&r.month===getCM();});
+    var statusHtml=rec?'<span class="badge b-'+rec.status+'">'+rec.status+'</span>':'<span style="color:var(--t3);font-size:11px">无记录</span>';
+    var div=document.createElement('div');
+    div.className='rmc';
+    div.innerHTML='<div class="rmc-hd"><span style="font-size:1rem">'+p.icon+'</span><span class="rmc-n">'+p.name+'</span><span class="rmc-en '+(en?'en-on':'en-off')+'">'+(en?'已启用':'已停用')+'</span></div>'
+      +'<div class="rmc-body">'
+      +'<div class="rr"><span class="k">开票周期</span><span>'+(rm.cycle||'未配置')+'</span></div>'
+      +'<div class="rr"><span class="k">截止日</span><span>'+(rm.deadline?'每月'+rm.deadline+'号':'未配置')+'</span></div>'
+      +'<div class="rr"><span class="k">距截止</span><span class="dp '+dc+'">'+dt+'</span></div>'
+      +'<div class="rr"><span class="k">本月状态</span><span>'+statusHtml+'</span></div>'
+      +(rm.note?'<div class="rr"><span class="k">说明</span><span style="color:var(--t3);font-size:11px">'+rm.note+'</span></div>':'')
+      +'</div>';
+    var editBtn=document.createElement('button');
+    editBtn.className='rmc-eb';
+    editBtn.textContent='✏️ 编辑规则';
+    editBtn.onclick=(function(pid){return function(){openRm(pid);};})(p.id);
+    div.appendChild(editBtn);
+    grid.appendChild(div);
+  });
+}
+function openRm(platId){
+  rmPlatId=platId;const p=D.platforms.find(x=>x.id===platId),rm=D.reminders[platId]||{};
+  document.getElementById('rm-title').textContent='编辑提醒规则 · '+p.name;
+  document.getElementById('rm-cycle').value=rm.cycle||'每月';
+  document.getElementById('rm-dl').value=rm.deadline||'';
+  document.getElementById('rm-note').value=rm.note||'';
+  document.getElementById('rm-en').checked=rm.enabled!==false;
+  openMo('mo-rm');
+}
+function saveReminder(){
+  if(!D.reminders)D.reminders={};
+  D.reminders[rmPlatId]={cycle:document.getElementById('rm-cycle').value,deadline:document.getElementById('rm-dl').value,note:document.getElementById('rm-note').value,enabled:document.getElementById('rm-en').checked};
+  const p=D.platforms.find(x=>x.id===rmPlatId);addLog('更新提醒规则：'+(p?.name),'system');save();closeMo('mo-rm');toast('✓ 提醒规则已保存');renderReminders();
+}
+function renderLog(){
+  const logs=D.log||[];
+  document.getElementById('logList').innerHTML=logs.length?logs.map(l=>{const d=new Date(l.time);const t=(d.getMonth()+1)+'/'+d.getDate()+' '+d.getHours().toString().padStart(2,'0')+':'+d.getMinutes().toString().padStart(2,'0');const cm={edit:'lc-e',ledger:'lc-l',system:'lc-s',platform:'lc-p'},cn={edit:'编辑',ledger:'台账',system:'系统',platform:'平台'};return'<div class="logitem"><span class="log-t">'+t+'</span><span class="log-a">'+l.action+'</span><span class="log-c '+(cm[l.cat]||'lc-s')+'">'+(cn[l.cat]||'系统')+'</span></div>';}).join(''):'<div class="es"><div style="font-size:1.4rem;margin-bottom:6px">📜</div>暂无操作记录</div>';
+}
+function clearLog(){if(!confirm('确定清空所有日志？'))return;D.log=[];save();toast('日志已清空');renderLog();}
+function renderConfig(){
+  var list=document.getElementById('platCfg');
+  list.innerHTML='';
+  D.platforms.forEach(function(p){
+    var row=document.createElement('div');
+    row.className='cfg-r';
+    var info=document.createElement('div');
+    info.innerHTML='<div>'+p.icon+' '+p.name+'</div><div class="cfg-d">'+(p.desc||'')+'</div>';
+    var ctrl=document.createElement('div');
+    ctrl.style.cssText='display:flex;gap:7px;align-items:center';
+    var lbl=document.createElement('label');
+    lbl.style.cssText='font-size:12px;color:var(--t3);display:flex;align-items:center;gap:5px;cursor:pointer';
+    var chk=document.createElement('input');
+    chk.type='checkbox';
+    chk.checked=(p.enabled!==false);
+    chk.style.cursor='pointer';
+    chk.onchange=(function(pid){return function(){togPlat(pid,this.checked);};})(p.id);
+    lbl.appendChild(chk);
+    lbl.appendChild(document.createTextNode('启用'));
+    var viewBtn=document.createElement('button');
+    viewBtn.className='btn btn-g btn-xs';
+    viewBtn.textContent='查看';
+    viewBtn.onclick=(function(pid){return function(){goPlat(pid);};})(p.id);
+    ctrl.appendChild(lbl);
+    ctrl.appendChild(viewBtn);
+    row.appendChild(info);
+    row.appendChild(ctrl);
+    list.appendChild(row);
+  });
+}
+function togPlat(id,val){const p=D.platforms.find(x=>x.id===id);if(p){p.enabled=val;addLog((val?'启用':'停用')+'平台：'+p.name,'system');save();}}
+function exportBackup(){try{const a=document.createElement('a');a.href='data:application/json;charset=utf-8,'+encodeURIComponent(JSON.stringify(D,null,2));a.download='开票数据备份_'+new Date().toISOString().slice(0,10)+'.json';a.click();addLog('导出数据备份','system');save();toast('✓ 已导出备份');}catch(e){}}
+function importBackup(input){const file=input.files[0];if(!file)return;const reader=new FileReader();reader.onload=e=>{try{const imp=JSON.parse(e.target.result);if(!imp.platforms)throw new Error('格式不正确');if(!confirm('导入将覆盖当前开票数据，确认？'))return;D=imp;if(!D.ledger)D.ledger=[];if(!D.log)D.log=[];if(!D.reminders)D.reminders={};addLog('导入数据备份','system');save();toast('✓ 数据已导入');renderNav();renderByPage();}catch(err){toast('导入失败：'+err.message);}};reader.readAsText(file);input.value='';}
+function resetData(){if(!confirm('确定要重置开票数据为默认？所有修改和台账将丢失！'))return;D=clone(DD);D.ledger=[];D.log=[];D.reminders={};D.platforms.forEach(p=>p.enabled=true);addLog('重置为默认数据','system');save();toast('✓ 已重置');renderNav();renderByPage();}
+function openAddPlat(){
+  selColor=COLS[0];
+  ['np-name','np-icon','np-desc'].forEach(function(id){document.getElementById(id).value='';});
+  var cr=document.getElementById('colorRow');
+  cr.innerHTML='';
+  COLS.forEach(function(col){
+    var sw=document.createElement('div');
+    sw.className='csw'+(col===selColor?' sel':'');
+    sw.style.background=col;
+    sw.onclick=(function(col,sw){return function(){pickColor(col,sw);};})(col,sw);
+    cr.appendChild(sw);
+  });
+  openMo('mo-plat');
+}
+function pickColor(c,el){selColor=c;document.querySelectorAll('.csw').forEach(s=>s.classList.remove('sel'));el.classList.add('sel');}
+function confirmAddPlat(){const name=document.getElementById('np-name').value.trim();if(!name){toast('请填写平台名称');return;}const id='p_'+Date.now();D.platforms.push({id,name,icon:document.getElementById('np-icon').value||'📋',color:selColor,enabled:true,desc:document.getElementById('np-desc').value||'',cards:[],notes:[],warnings:[],accounts:[],steps:[{title:'登录平台',desc:'输入账号密码登录。'}],inv:[{title:'开票信息',blocks:[{title:'开票主体',rows:[['开票类型','增值税专用发票']]}]}]});addLog('添加新平台：'+name,'platform');closeMo('mo-plat');save();toast('✓ 平台已添加');goPlat(id);}
+function confirmExport(){
+  const type=document.getElementById('exp-type').value,fmt2=document.getElementById('exp-fmt').value,date=new Date().toISOString().slice(0,10);
+  if(fmt2==='json'){const out={};if(type!=='malls')out.settlement={data2025,data2026};if(type!=='settlement')out.malls=mallData;try{const a=document.createElement('a');a.href='data:application/json;charset=utf-8,'+encodeURIComponent(JSON.stringify(out,null,2));a.download='返现易数据_'+date+'.json';a.click();}catch(e){}}
+  else{let rows=[];if(type==='malls'||type==='all'){rows.push(['商城名称','合作情况','风险等级','备注','行动建议']);mallData.forEach(m=>rows.push([m.name,m.status,m.risk,m.note,m.action]));}const csv=rows.map(r=>r.map(c=>'"'+String(c).replace(/"/g,'""')+'"').join(',')).join('\n');try{const a=document.createElement('a');a.href='data:text/csv;charset=utf-8,'+encodeURIComponent('\uFEFF'+csv);a.download='返现易数据_'+date+'.csv';a.click();}catch(e){}}
+  closeMo('mo-export');toast('文件已下载');
+}
+
+// Platform name keyword -> system data key mapping
+// Excel rows whose name contains any keyword get merged into the system key
+var PLAT_MAP = [
+  {keys:['淘宝联盟','淘宝'], sysKey:'淘宝联盟(合计)'},
+  {keys:['京东'], sysKey:'京东'},
+  {keys:['拼多多'], sysKey:'拼多多'},
+  {keys:['美团'], sysKey:'美团'},
+  {keys:['饿了么','阿里巴巴本地生活'], sysKey:'饿了么'},
+  {keys:['成果网'], sysKey:'成果网'},
+  {keys:['抖音穿山甲','穿山甲'], sysKey:'抖音穿山甲'},
+  {keys:['唯品会'], sysKey:'唯品会'},
+  {keys:['携程'], sysKey:'携程'},
+  {keys:['多麦联盟','多麦'], sysKey:'多麦联盟'},
+  {keys:['苏宁'], sysKey:'苏宁联盟'},
+  {keys:['Points.com','points'], sysKey:'Points.com'}
+];
+
+function matchPlatform(name) {
+  if (!name) return null;
+  var n = name.toLowerCase();
+  for (var i = 0; i < PLAT_MAP.length; i++) {
+    var entry = PLAT_MAP[i];
+    for (var j = 0; j < entry.keys.length; j++) {
+      if (n.includes(entry.keys[j].toLowerCase())) return entry.sysKey;
+    }
+  }
+  return null;
+}
+
+var parsedExcelData = null; // stores parsed result before confirm
+
+function handleFile(input) {
+  var f = input.files[0]; if (!f) return;
+  var p = document.getElementById('up-prev');
+  p.classList.add('show');
+  p.innerHTML = '已选择：' + f.name + ' (' + (f.size/1024).toFixed(1) + ' KB) · 解析中…';
+  document.getElementById('up-preview-table').innerHTML = '';
+  parsedExcelData = null;
+
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      var wb = XLSX.read(e.target.result, {type:'array'});
+      var ws = wb.Sheets[wb.SheetNames[0]];
+      var rows = XLSX.utils.sheet_to_json(ws, {header:1, defval:null});
+
+      // Find header row (contains 一月 or 月份)
+      var headerRowIdx = -1;
+      for (var i = 0; i < Math.min(5, rows.length); i++) {
+        var row = rows[i];
+        if (row && row.some(function(v){ return v && String(v).includes('月'); })) {
+          headerRowIdx = i; break;
+        }
+      }
+      if (headerRowIdx === -1) { toast('找不到月份表头，请确认文件格式'); return; }
+
+      // Find month columns (一月份~十二月份 or 一月~十二月)
+      var header = rows[headerRowIdx];
+      var monthCols = [];
+      var monthNames = ['一','二','三','四','五','六','七','八','九','十','十一','十二'];
+      for (var m = 0; m < 12; m++) {
+        for (var col = 0; col < header.length; col++) {
+          if (header[col] && String(header[col]).includes(monthNames[m]+'月')) {
+            monthCols[m] = col; break;
+          }
+        }
+      }
+
+      // Find platform name column (second non-null column usually)
+      var nameCol = -1;
+      for (var col = 0; col < header.length; col++) {
+        if (header[col] && (String(header[col]).includes('平台') || String(header[col]).includes('名称'))) {
+          nameCol = col; break;
+        }
+      }
+      if (nameCol === -1) nameCol = 1; // fallback to column B
+
+      // Parse data rows and accumulate by system key
+      var result = {}; // sysKey -> [12 months]
+      var unmapped = [];
+      var rowCount = 0;
+
+      for (var r = headerRowIdx + 1; r < rows.length; r++) {
+        var row = rows[r];
+        if (!row || !row[nameCol]) continue;
+        var rawName = String(row[nameCol]).trim();
+        if (!rawName || rawName === '合计' || rawName === '小计') continue;
+
+        var sysKey = matchPlatform(rawName);
+        var hasData = monthCols.some(function(col){ return col !== undefined && row[col] && parseFloat(row[col]) > 0; });
+        if (!hasData) continue;
+
+        rowCount++;
+        if (!sysKey) { unmapped.push(rawName); continue; }
+
+        if (!result[sysKey]) result[sysKey] = Array(12).fill(0);
+        monthCols.forEach(function(col, idx) {
+          if (col !== undefined && row[col]) {
+            var v = parseFloat(row[col]);
+            if (!isNaN(v)) result[sysKey][idx] += v;
+          }
+        });
+      }
+
+      parsedExcelData = result;
+
+      // Show preview
+      var year = document.getElementById('up-year').value;
+      var keys = Object.keys(result);
+      var previewHtml = '<div style="margin-top:8px;background:#f7f6f4;border-radius:7px;padding:10px 12px;font-size:11px">'
+        + '<div style="font-weight:500;margin-bottom:7px;color:#333">解析结果预览（' + year + '年，共 ' + keys.length + ' 个平台）</div>'
+        + '<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:11px">'
+        + '<thead><tr style="background:#eee"><th style="padding:4px 6px;text-align:left">平台</th>'
+        + ['一','二','三','四','五','六','七','八','九','十','十一','十二'].map(function(m){
+            return '<th style="padding:4px 6px;text-align:right">'+m+'月</th>';
+          }).join('') + '</tr></thead><tbody>';
+
+      keys.forEach(function(k) {
+        var vals = result[k];
+        previewHtml += '<tr><td style="padding:3px 6px;font-weight:500">' + k + '</td>'
+          + vals.map(function(v){
+              return '<td style="padding:3px 6px;text-align:right;color:'+(v>0?'#1a1a1a':'#ccc')+'">'+(v>0?'¥'+v.toLocaleString('zh-CN',{maximumFractionDigits:2}):'—')+'</td>';
+            }).join('') + '</tr>';
+      });
+
+      previewHtml += '</tbody></table></div>';
+      if (unmapped.length) {
+        previewHtml += '<div style="margin-top:6px;color:#a05c00">⚠️ 以下行未能匹配到系统平台（已跳过）：' + unmapped.join('、') + '</div>';
+      }
+      previewHtml += '</div>';
+
+      document.getElementById('up-preview-table').innerHTML = previewHtml;
+      p.innerHTML = '✓ 已解析：' + f.name + ' · ' + keys.length + ' 个平台，' + rowCount + ' 行数据';
+      p.style.color = 'var(--green)';
+
+    } catch(err) {
+      p.innerHTML = '✗ 解析失败：' + err.message;
+      p.style.color = 'var(--red)';
+      parsedExcelData = null;
+    }
+  };
+  reader.readAsArrayBuffer(f);
+}
+function handleDrop(e){e.preventDefault();document.getElementById('up-zone').classList.remove('drag');const f=e.dataTransfer.files[0];if(!f)return;const p=document.getElementById('up-prev');p.classList.add('show');p.innerHTML='已选择：'+f.name;}
+function confirmUpload() {
+  var f = document.getElementById('up-file').files[0];
+  if (!f) { toast('请先选择文件'); return; }
+  if (!parsedExcelData) { toast('文件尚未解析完成，请稍候'); return; }
+
+  var year = document.getElementById('up-year').value;
+  var mode = document.getElementById('up-mode').value;
+
+  // Get or create the target data object
+  var targetData;
+  if (year === '2025') targetData = data2025;
+  else if (year === '2026') targetData = data2026;
+  else {
+    // New year - create empty data object dynamically
+    // We'll store it on window for now
+    if (!window['data' + year]) window['data' + year] = {};
+    targetData = window['data' + year];
+  }
+
+  if (mode === 'overwrite') {
+    // Clear existing data for this year first
+    Object.keys(targetData).forEach(function(k) { delete targetData[k]; });
+  }
+
+  // Merge parsed data into target
+  var updated = [], added = [];
+  Object.keys(parsedExcelData).forEach(function(sysKey) {
+    var newVals = parsedExcelData[sysKey];
+    if (targetData[sysKey]) {
+      if (mode === 'merge') {
+        // Only overwrite months that have data in the new file
+        newVals.forEach(function(v, i) { if (v > 0) targetData[sysKey][i] = v; });
+      } else {
+        targetData[sysKey] = newVals.slice();
+      }
+      updated.push(sysKey);
+    } else {
+      targetData[sysKey] = newVals.slice();
+      added.push(sysKey);
+    }
+  });
+
+  // Add year selector for settlement page if it's a new year
+  if (year !== '2025' && year !== '2026') {
+    var yearSel = document.getElementById('yearSel');
+    if (yearSel && !Array.from(yearSel.options).find(function(o){ return o.value === year; })) {
+      var opt = document.createElement('option');
+      opt.value = year; opt.textContent = year + '年';
+      yearSel.appendChild(opt);
+    }
+  }
+
+  closeMo('mo-upload');
+  document.getElementById('up-prev').classList.remove('show');
+  document.getElementById('up-prev').style.color = '';
+  document.getElementById('up-file').value = '';
+  document.getElementById('up-preview-table').innerHTML = '';
+  parsedExcelData = null;
+
+  // Refresh charts if on overview page
+  if (curPage === 'overview') buildCharts();
+  if (curPage === 'settlement') renderSettle();
+
+  var msg = year + '年数据已更新 · ';
+  if (updated.length) msg += '更新 ' + updated.length + ' 个平台';
+  if (added.length) msg += (updated.length?'，':'') + '新增 ' + added.length + ' 个平台';
+  saveSettle();
+  toast('✓ ' + msg);
+  addLog('上传结算数据：' + year + '年，' + (updated.length+added.length) + '个平台', 'system');
+}
+function doSearch(q){
+  var box=document.getElementById('srBox');
+  if(!q.trim()){box.classList.remove('open');return;}
+  var ql=q.toLowerCase(),results=[];
+  D.platforms.forEach(function(p){
+    var sm=p.steps.filter(function(s){return (s.title+s.desc).toLowerCase().includes(ql);});
+    if(sm.length){
+      sm.slice(0,2).forEach(function(s){results.push({id:p.id,name:p.name,label:s.title,tag:'步骤'});});
+    } else if(p.name.toLowerCase().includes(ql)||(p.desc||'').toLowerCase().includes(ql)){
+      results.push({id:p.id,name:p.name,label:p.name,tag:'平台'});
+    }
+    (p.inv||[]).forEach(function(sec){
+      sec.blocks.forEach(function(b){
+        if(JSON.stringify(b).toLowerCase().includes(ql)&&!results.find(function(r){return r.id===p.id&&r.label===b.title;}))
+          results.push({id:p.id,name:p.name,label:b.title,tag:'开票信息'});
+      });
+    });
+  });
+  box.innerHTML='';
+  if(!results.length){
+    box.innerHTML='<div class="sri" style="color:var(--t3)">未找到匹配内容</div>';
+  } else {
+    results.slice(0,8).forEach(function(r){
+      var item=document.createElement('div');
+      item.className='sri';
+      item.innerHTML='<div>'+r.label+'</div><div class="sri-tag">'+r.tag+' · '+r.name+'</div>';
+      item.onmousedown=(function(id){return function(){goPlat(id);hideSearch();};})(r.id);
+      box.appendChild(item);
+    });
+  }
+  box.classList.add('open');
+}
+function hideSearch(){setTimeout(()=>document.getElementById('srBox').classList.remove('open'),150);}
+function ev(v){return encodeURIComponent(v||'');}
+function cv(enc){navigator.clipboard.writeText(decodeURIComponent(enc)).then(()=>toast('✓ 已复制'));}
+function togglePwd(id,enc){const el=document.getElementById(id);el.textContent=el.textContent.includes('•')?decodeURIComponent(enc):'••••••••';}
+function openMo(id){document.getElementById(id).classList.add('open');}
+function closeMo(id){document.getElementById(id).classList.remove('open');}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2400);}
+function goInvoice(){go('invoice',document.getElementById('N-invoice'));}
+function goLedger(){go('ledger',document.getElementById('N-ledger'));}
+function goPlats(){go('platforms',document.getElementById('N-platforms'));}
+
+// ── Unified export/import functions ─────────────────────────────────────
+function exportAll(){
+  // Bundle everything: invoice data + settlement + malls
+  var bundle={
+    version:'2.0',
+    exportedAt:new Date().toISOString(),
+    invoice:D,
+    settlement:{data2025:data2025,data2026:data2026},
+    malls:mallData
+  };
+  try{
+    var a=document.createElement('a');
+    a.href='data:application/json;charset=utf-8,'+encodeURIComponent(JSON.stringify(bundle,null,2));
+    a.download='返现易全量备份_'+new Date().toISOString().slice(0,10)+'.json';
+    a.click();
+    addLog('全量导出数据备份','system');save();toast('✓ 全量备份已导出');
+  }catch(e){
+    var w=window.open('','_blank');if(w)w.document.write('<pre>'+JSON.stringify(bundle,null,2)+'</pre>');
+  }
+}
+function exportSettleJson(){
+  var out={settlement:{data2025:data2025,data2026:data2026},malls:mallData};
+  try{
+    var a=document.createElement('a');
+    a.href='data:application/json;charset=utf-8,'+encodeURIComponent(JSON.stringify(out,null,2));
+    a.download='返现易结算数据_'+new Date().toISOString().slice(0,10)+'.json';
+    a.click();toast('✓ 结算数据已导出 JSON');
+  }catch(e){}
+}
+function exportSettleCsv(){
+  var rows=[['平台','一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月','合计']];
+  Object.entries(data2025).forEach(function(e){
+    var total=e[1].reduce(function(s,v){return s+v;},0);
+    rows.push([e[0]+'(2025)'].concat(e[1]).concat([total]));
+  });
+  Object.entries(data2026).forEach(function(e){
+    var total=e[1].reduce(function(s,v){return s+v;},0);
+    rows.push([e[0]+'(2026)'].concat(e[1]).concat([total]));
+  });
+  rows.push([]);
+  rows.push(['商城名称','合作情况','风险等级','备注','行动建议']);
+  mallData.forEach(function(m){rows.push([m.name,m.status,m.risk,m.note,m.action]);});
+  var csv=rows.map(function(r){return r.map(function(v){return '"'+(v||'')+'"';}).join(',');}).join('\n');
+  try{
+    var a=document.createElement('a');
+    a.href='data:text/csv;charset=utf-8,'+encodeURIComponent('\uFEFF'+csv);
+    a.download='返现易结算数据_'+new Date().toISOString().slice(0,10)+'.csv';
+    a.click();toast('✓ 结算数据已导出 CSV');
+  }catch(e){}
+}
+function importAll(input){
+  var file=input.files[0];if(!file)return;
+  var reader=new FileReader();
+  reader.onload=function(e){
+    try{
+      var bundle=JSON.parse(e.target.result);
+      if(!bundle.invoice&&!bundle.settlement&&!bundle.malls)throw new Error('不是有效的全量备份文件');
+      if(!confirm('导入将覆盖当前所有数据（开票 + 结算 + 商城），确认继续？'))return;
+      // Restore invoice data
+      if(bundle.invoice&&bundle.invoice.platforms){
+        D=bundle.invoice;
+        if(!D.ledger)D.ledger=[];if(!D.log)D.log=[];if(!D.reminders)D.reminders={};
+        save();
+      }
+      // Restore settlement data
+      if(bundle.settlement){
+        if(bundle.settlement.data2025)Object.assign(data2025,bundle.settlement.data2025);
+        if(bundle.settlement.data2026)Object.assign(data2026,bundle.settlement.data2026);
+      }
+      // Restore malls
+      if(bundle.malls&&Array.isArray(bundle.malls)){
+        mallData.length=0;
+        bundle.malls.forEach(function(m){mallData.push(m);});
+      }
+      addLog('导入全量备份','system');save();saveSettle();
+      toast('✓ 全量数据已恢复');renderNav();renderByPage();
+    }catch(err){toast('导入失败：'+err.message);}
+  };
+  reader.readAsText(file);input.value='';
+}
+
+
+function exportReminders(){
+  if(!D.reminders||!Object.keys(D.reminders).length){toast('当前没有已配置的提醒规则');return;}
+  var out={version:'2.0',exportedAt:new Date().toISOString(),reminders:D.reminders};
+  try{
+    var a=document.createElement('a');
+    a.href='data:application/json;charset=utf-8,'+encodeURIComponent(JSON.stringify(out,null,2));
+    a.download='提醒规则备份_'+new Date().toISOString().slice(0,10)+'.json';
+    a.click();
+    addLog('导出提醒规则','system');toast('已导出提醒规则 JSON');
+  }catch(e){var w=window.open('','_blank');if(w)w.document.write('<pre>'+JSON.stringify(out,null,2)+'</pre>');}
+}
+
+function importReminders(input){
+  var file=input.files[0];if(!file)return;
+  var reader=new FileReader();
+  reader.onload=function(e){
+    try{
+      var data=JSON.parse(e.target.result);
+      var src=data.reminders||data;
+      if(typeof src!=='object'||Array.isArray(src))throw new Error('格式不正确，需要 JSON 对象');
+      var count=Object.keys(src).length;
+      if(!confirm('导入将覆盖当前所有提醒规则（共'+count+'条），确认？'))return;
+      D.reminders=src;
+      addLog('导入提醒规则备份（'+count+'条）','system');
+      save();toast('已恢复'+count+'条提醒规则');renderReminders();
+    }catch(err){toast('导入失败：'+err.message);}
+  };
+  reader.readAsText(file);input.value='';
+}
+
+function openSnapshotModal(){
+  generateShareSnapshot();
+}
+
+function closeSnapshot(){
+  document.getElementById('snap-wrap').classList.remove('open');
+}
+
+function renderSnapshotCard(){
+  var today=new Date();
+  var dateStr=today.getFullYear()+'年'+(today.getMonth()+1)+'月'+today.getDate()+'日';
+  var cm=getCM();
+  var recs=(D.ledger||[]).filter(function(r){return r.month===cm;});
+  var done=recs.filter(function(r){return DONE.includes(r.status);});
+  var pending=recs.filter(function(r){return !DONE.includes(r.status)&&r.status!=='本月无需处理';});
+  var anom=recs.filter(function(r){return r.status==='异常/退回';});
+  var total=recs.reduce(function(s,r){return s+(parseFloat(r.platAmt)||0);},0);
+  var total2026v=sumY(data2026);
+  var enabledCount=D.platforms.filter(function(p){return p.enabled!==false;}).length;
+
+  // Status label helper
+  function stClass(s){
+    if(DONE.includes(s))return 'snap-st-done';
+    if(s==='异常/退回')return 'snap-st-anom';
+    if(s==='未开始')return 'snap-st-wait';
+    return 'snap-st-doing';
+  }
+
+  // Sort records by status order
+  var statusOrder={'异常/退回':0,'未开始':1,'已取数':2,'已提交收款申请':3,'财务已开票':4,'已上传发票':5,'平台审核中':6,'已到账':7,'已归档':8,'本月无需处理':9};
+  var sortedRecs=recs.slice().sort(function(a,b){return (statusOrder[a.status]||5)-(statusOrder[b.status]||5);});
+
+  // Top settle platforms for 2026
+  var settle26=Object.entries(data2026)
+    .map(function(e){return {name:e[0],total:e[1].reduce(function(s,v){return s+v;},0)};})
+    .filter(function(x){return x.total>0;})
+    .sort(function(a,b){return b.total-a.total;})
+    .slice(0,4);
+
+  var platRows=sortedRecs.map(function(r){
+    var amt=r.platAmt||r.amount;
+    var amtStr=amt?'¥'+parseFloat(amt).toLocaleString('zh-CN',{minimumFractionDigits:2,maximumFractionDigits:2}):'待填写';
+    return '<div class="snap-plat-row">'
+      +'<span class="snap-plat-name">'+r.platform+'</span>'
+      +'<span class="snap-plat-status '+stClass(r.status)+'">'+r.status+'</span>'
+      +'<span class="snap-plat-amt">'+amtStr+'</span>'
+      +'</div>';
+  }).join('');
+
+  var settleRows=settle26.map(function(x){
+    return '<div class="snap-settle-row">'
+      +'<span style="color:#333;font-weight:500">'+x.name+'</span>'
+      +'<span style="font-weight:600;color:#C8202A">'+fmt(x.total)+'</span>'
+      +'</div>';
+  }).join('');
+
+  document.getElementById('snap-card').innerHTML=
+    '<div class="snap-header">'
+      +'<div class="snap-logo">返现易 · 运营管理中台</div>'
+      +'<div class="snap-date">数据快照 · '+dateStr+'</div>'
+    +'</div>'
+    // KPI
+    +'<div class="snap-section">'
+      +'<div class="snap-sec-title">本月开票看板 · '+cm+'</div>'
+      +'<div class="snap-kpi-row">'
+        +'<div class="snap-kpi"><div class="snap-kpi-val c-green">'+done.length+'</div><div class="snap-kpi-lbl">已完成</div></div>'
+        +'<div class="snap-kpi"><div class="snap-kpi-val c-red">'+pending.length+'</div><div class="snap-kpi-lbl">待处理</div></div>'
+        +'<div class="snap-kpi"><div class="snap-kpi-val">¥'+Math.round(total/10000).toLocaleString()+'万</div><div class="snap-kpi-lbl">开票总额</div></div>'
+      +'</div>'
+    +'</div>'
+    // Platform status
+    +(recs.length?
+      '<div class="snap-section">'
+        +'<div class="snap-sec-title">平台进度（'+recs.length+'个）</div>'
+        +platRows
+      +'</div>':'')
+    // Settlement
+    +(settle26.length?
+      '<div class="snap-section">'
+        +'<div class="snap-sec-title">2026年结算累计 · '+fmt(total2026v)+'</div>'
+        +settleRows
+      +'</div>':'')
+    // Footer
+    +'<div class="snap-footer">返现易运营管理中台 · 共'+enabledCount+'个联盟平台 · 商城'+mallData.length+'个</div>';
+}
+
+function copySnapshotImg(){
+  // Use html2canvas if available, else copy text summary
+  if(typeof html2canvas!=='undefined'){
+    html2canvas(document.getElementById('snap-card'),{scale:2,backgroundColor:'#fff'}).then(function(canvas){
+      canvas.toBlob(function(blob){
+        try{
+          navigator.clipboard.write([new ClipboardItem({'image/png':blob})]).then(function(){toast('✓ 卡片已复制为图片');}).catch(function(){downloadSnapImg(canvas);});
+        }catch(e){downloadSnapImg(canvas);}
+      });
+    });
+  } else {
+    // Fallback: download card as image using dom-to-image via data URI trick
+    // Just download the card
+    var msg=buildFallbackText();
+    navigator.clipboard.writeText(msg).then(function(){toast('✓ 已复制文字快照');}).catch(function(){toast('请截图保存卡片');});
+  }
+}
+
+function downloadSnapImg(canvas){
+  var a=document.createElement('a');
+  a.href=canvas.toDataURL('image/png');
+  a.download='返现易快照_'+new Date().toISOString().slice(0,10)+'.png';
+  a.click();toast('✓ 快照已下载为图片');
+}
+
+function buildFallbackText(){
+  var cm=getCM();
+  var recs=(D.ledger||[]).filter(function(r){return r.month===cm;});
+  var done=recs.filter(function(r){return DONE.includes(r.status);});
+  var total=recs.reduce(function(s,r){return s+(parseFloat(r.platAmt)||0);},0);
+  var lines=['【返现易运营管理中台 · 数据快照】'];
+  lines.push('时间：'+new Date().toLocaleDateString('zh-CN'));
+  lines.push('');
+  lines.push('本月开票（'+cm+'）');
+  lines.push('已完成：'+done.length+' / '+recs.length+'  总额：¥'+total.toLocaleString('zh-CN',{minimumFractionDigits:2}));
+  recs.forEach(function(r){
+    var amt=r.platAmt||r.amount;
+    lines.push('· '+r.platform+' '+r.status+(amt?' ¥'+parseFloat(amt).toLocaleString('zh-CN',{minimumFractionDigits:2}):''));
+  });
+  lines.push('');
+  lines.push('2026年结算累计：'+fmt(sumY(data2026)));
+  return lines.join('\n');
+}
+
+
+function downloadSnapshot(){
+  var el=document.getElementById('snapshot-content');
+  if(!el)return;
+  try{
+    var a=document.createElement('a');
+    a.href='data:text/plain;charset=utf-8,'+encodeURIComponent(el.value);
+    a.download='返现易数据快照_'+new Date().toISOString().slice(0,10)+'.txt';
+    a.click();toast('已下载快照文件');
+  }catch(e){toast('下载失败，请手动复制');}
+}
+
+
+function generateShareSnapshot(){
+  try{
+    var today=new Date();
+    var dateStr=today.getFullYear()+'年'+(today.getMonth()+1)+'月'+today.getDate()+'日';
+
+    // Get current live HTML
+    var html=document.documentElement.outerHTML;
+
+    // Replace data declarations with current live values
+    // data2025
+    html=html.replace(
+      /let data2025=\{[^;]+\};/,
+      'let data2025='+JSON.stringify(data2025)+';'
+    );
+    // data2026
+    html=html.replace(
+      /let data2026=\{[^;]+\};/,
+      'let data2026='+JSON.stringify(data2026)+';'
+    );
+    // mallData
+    html=html.replace(
+      /let mallData=\[[^\]]+\];/s,
+      'let mallData='+JSON.stringify(mallData)+';'
+    );
+    // DD (embed current D so snapshot shows live invoice data)
+    html=html.replace(
+      /const DD=\{[^;]+\};/s,
+      'const DD='+JSON.stringify(D)+';'
+    );
+
+    // Override loadAsync so snapshot loads from DD directly (no storage)
+    html=html.replace(
+      /async function loadAsync\(\)\{[\s\S]*?\n\}/,
+      'async function loadAsync(){D=clone(DD);if(!D.ledger)D.ledger=[];if(!D.log)D.log=[];if(!D.reminders)D.reminders={};D.platforms.forEach(function(p){if(p.enabled===undefined)p.enabled=true;});}'
+    );
+
+    // Override save() to do nothing (read-only snapshot)
+    html=html.replace(
+      'function save(){try{window.storage.set(SK,JSON.stringify(D))}catch(e){}}',
+      'function save(){/* snapshot: read-only */}'
+    );
+    html=html.replace(
+      'function saveSettle(){try{window.storage.set(SK2,JSON.stringify({data2025:data2025,data2026:data2026,mallData:mallData}))}catch(e){}}',
+      'function saveSettle(){/* snapshot: read-only */}'
+    );
+
+    // Add snapshot banner after <body>
+    var banner='<div style="position:fixed;top:0;left:0;right:0;z-index:9999;background:#a05c00;color:#fff;text-align:center;padding:6px 12px;font-size:12px;font-family:sans-serif">📸 数据快照 · '+dateStr+' · 只读模式，数据不会被修改</div><div style="height:32px"></div>';
+    html=html.replace('<body>', '<body>'+banner);
+
+    // Update title
+    html=html.replace('<title>返现易 · 运营管理中台</title>',
+      '<title>返现易快照 · '+dateStr+'</title>');
+
+    // Download
+    var encoded='data:text/html;charset=utf-8,'+encodeURIComponent(html);
+    var a=document.createElement('a');
+    a.href=encoded;
+    a.download='返现易快照_'+new Date().toISOString().slice(0,10)+'.html';
+    a.style.display='none';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    toast('✓ 快照已下载，发给同事双击即可查看完整系统');
+    addLog('生成系统快照并下载','system');
+  }catch(e){
+    var w=window.open('','_blank');
+    if(w){
+      w.document.open();
+      w.document.write(document.documentElement.outerHTML);
+      w.document.close();
+      toast('✓ 快照已在新标签页打开');
+    }else{
+      toast('生成失败：'+e.message);
+    }
+  }
+}
+// ── Init ─────────────────────────────────────────────────────────────────
+document.querySelectorAll('.mo').forEach(function(m){
+  m.addEventListener('click',function(e){if(e.target===m)m.classList.remove('open');});
+});
+load();
+</script>
+
+<!-- 快照弹窗 -->
+<div class="snap-wrap" id="snap-wrap" onclick="if(event.target===this)closeSnapshot()">
+  <div class="snap-outer">
+    <div class="snap-actions">
+      <button class="btn btn-p" onclick="copySnapshotImg()">📋 复制图片</button>
+      <button class="btn btn-g" style="background:#fff" onclick="closeSnapshot()">关闭</button>
+    </div>
+    <div class="snap-card" id="snap-card">
+      <!-- filled by JS -->
+    </div>
+  </div>
+</div>
+
+</body></html>
